@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+.sidebar{
+    height: 100vh;
+    width: 240px;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 4px lightgrey;
+    filter: blur(20);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    flex-grow: 1;
+}
+
+/* .sidebar:hover,  h1{
+    transition: 0.75s ease-in;
+    width: 200px;
+    color: transparent;
+} */
+
+.sidebar h1{
+    color: black;
+    font-size: 26px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500;
+    padding: 5px 25px;
+}
+
+h1 i{
+    margin-right: 10px;
+}
+
+.first, .second{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.third{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: -20px;
+    margin-top: auto;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+}
+
+.first li, .second li{
+    list-style: none;
+}
+
+.first li a, .second li a, .third{
+    width: 150px;
+    height: 40px;
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 350;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    padding: 5px 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: -15px;
+}
+
+.first li:hover a, .second li:hover a{
+
+    border-radius: 5px;
+    height: 30px;
+    background-color: rgb(255, 166, 166);
+    color: rgb(6, 6, 11);
+    transition: 0.25s ease-in;
+}
+
+.first li i, .second li i, .third li i{
+    margin-right: 10px;
+    font-size: 16px;
+}
