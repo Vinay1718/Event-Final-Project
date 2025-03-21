@@ -8,8 +8,10 @@ import Cart from './component/Cart/Cart';
 import Payments from './component/Payments/Payments';
 import Support from './component/Support/Support';
 import Tickets from './component/Tickets/Tickets';
+import { useState } from 'react';
 
 function App() {
+  const [cart, setCart] = useState([])
   return (
     <>
       <BrowserRouter>
@@ -17,10 +19,10 @@ function App() {
           <Sidebar />
           <div className="content-container">
             <Routes>
-              <Route path='/' element={<Home />} />
+              <Route path='/' element={<Home cart={cart} setCart={setCart} />} />
               <Route path='/settings' element={<Settings />} />
               <Route path='/orders' element={<Orders />} />
-              <Route path='/cart' element={<Cart />} />
+              <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
               <Route path='/payments' element={<Payments />} />
               <Route path='/support' element={<Support />} />
               <Route path='/tickets' element={<Tickets />} />
