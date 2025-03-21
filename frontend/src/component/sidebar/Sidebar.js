@@ -17,9 +17,9 @@ export default function Sidebar() {
                 </li>
 
                 <li>
-                <Link to='/category'>
+                <Link to='/tickets'>
                 <i class="fa-solid fa-layer-group" style={{color: "#f01919;"}}></i>
-                Category
+                Tickets
                 </Link>
                 </li>
 
