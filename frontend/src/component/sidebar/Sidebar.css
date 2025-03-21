@@ -9,16 +9,24 @@
 
 .sidebar {
     height: 100vh;
-    width: 250px;
-    background-color: #fff;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 85px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    transition: all 0.3s ease-in-out;
     position: fixed;
     left: 0;
     top: 0;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    width: 260px; 
 }
 
 .sidebar h1 {
@@ -27,7 +35,14 @@
     font-weight: 600;
     padding: 15px;
     text-align: center;
-    border-bottom: 5px solid #f01919;
+    background: linear-gradient(45deg, rgba(240, 25, 25, 0.8), rgba(240, 25, 25, 0.5));
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 h1 i {
@@ -41,15 +56,24 @@ h1 i {
 }
 
 .sidebar ul li {
-    margin: 10px 15px;
+    margin: 10px;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar ul li:hover {
-    background-color: rgba(240, 25, 25, 0.1);
+    background: linear-gradient(135deg, rgba(240, 25, 25, 0.8), rgba(240, 25, 25, 0.6));
     transform: translateX(5px);
+}
+
+.sidebar ul li:hover a {
+    color: white;
 }
 
 .sidebar ul li a {
@@ -58,26 +82,42 @@ h1 i {
     font-size: 18px;
     font-weight: 500;
     display: flex;
+    padding-left: 10px;
     align-items: center;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.sidebar ul li a span {
+    display: none;
+}
+
+.sidebar:hover ul li a span {
+    display: inline; 
 }
 
 .sidebar ul li a i {
     margin-right: 12px;
-    font-size: 20px;
+    font-size: 22px;
     color: #f01919;
     transition: color 0.3s ease;
 }
-
 .sidebar ul li:hover a i {
-    color: #d01717;
+    color: white;
 }
-.first,
-.second {
+.first, .second {
     padding-top: 10px;
 }
 @media (max-width: 768px) {
     .sidebar {
-        width: 200px;
+        width: 85px;
+    }
+
+    .sidebar:hover {
+        width: 220px;
     }
 
     .sidebar ul li a {

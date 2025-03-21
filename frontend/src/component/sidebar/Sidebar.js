@@ -6,7 +6,7 @@ export default function Sidebar() {
     return (
         <div className="sidebar">
             <h1><i class="fa-brands fa-xing"></i>
-            FlashMart
+            Eventify
             </h1>
             <ul className='first'>
                 <li>
