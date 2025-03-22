@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -55,6 +55,8 @@ import h29 from "../asset/h29.webp";
 import h30 from "../asset/h30.webp";
 
 export default function Home({ cart, setCart }) {
+  const [selectedTicket, setSelectedTicket] = useState(null);
+
   const tickets = [
     { id: 1, name: "Dancing Event", place: "Delhi", price: 500, image: h1, description: "A night of energetic dance performances featuring top artists and DJs." },
     { id: 2, name: "Music Concert", place: "Mumbai", price: 1200, image: h2, description: "Experience the magic of live music with famous singers and bands." },
@@ -106,47 +108,34 @@ export default function Home({ cart, setCart }) {
     { id: 48, name: "Hot Air Balloon Ride", place: "Jaipur", price: 2800, image: h48, description: "Soar above Jaipur’s majestic forts and palaces in a magical hot air balloon ride, offering panoramic views of the Pink City." },
     { id: 49, name: "Ice Skating Show", place: "Shimla", price: 1300, image: h49, description: "Experience a dazzling ice-skating spectacle featuring world-class performers executing gravity-defying spins and artistic routines." },
     { id: 50, name: "Zumba Festival", place: "Pune", price: 450, image: h50, description: "Dance, sweat, and have fun at Pune’s biggest Zumba festival, where fitness meets rhythm in an electrifying atmosphere." }
-
 ];
+
+  const toastConfig = {
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+    style: {
+      background: "linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7))",
+      color: "#fff",
+      fontWeight: "bold",
+      borderRadius: "8px",
+      boxShadow: "4px 4px 12px rgba(0, 0, 0, 0.2)"
+    },
+    theme: "colored",
+  };
 
   const addToCart = (ticket) => {
     setCart((prevCart) => {
       const isItemInCart = prevCart.some((item) => item.id === ticket.id);
+      toast.dismiss();
       if (!isItemInCart) {
-        toast.success(`${ticket.name} added to cart!`, {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: true,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-          style: {
-            background: "linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7))",
-            color: "#fff",
-            fontWeight: "bold",
-            borderRadius: "8px",
-            boxShadow: "4px 4px 12px rgba(0, 0, 0, 0.2)"
-          },
-          theme: "colored",
-        });
+        toast.success(`${ticket.name} added to cart!`, toastConfig);
         return [...prevCart, ticket];
       } else {
-        toast.info(`${ticket.name} is already in cart!`, {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: true,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-          theme: "colored",
-          style: {
-            background: "linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7))",
-            color: "#fff",
-            fontWeight: "bold",
-            borderRadius: "8px",
-            boxShadow: "4px 4px 12px rgba(0, 0, 0, 0.2)"
-          },
-        });
+        toast.info(`${ticket.name} is already in cart!`, toastConfig);
         return prevCart;
       }
     });
@@ -162,11 +151,24 @@ export default function Home({ cart, setCart }) {
             <h2>{ticket.name}</h2>
             <h3>{ticket.place}</h3>
             <h3>₹{ticket.price}</h3>
-            <button>View Details</button>
+            <button onClick={() => setSelectedTicket(ticket)}>View Details</button>
             <button onClick={() => addToCart(ticket)}>Add to Cart</button>
           </div>
         ))}
       </div>
+
+      {selectedTicket && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close-btn" onClick={() => setSelectedTicket(null)}>&times;</span>
+            <img src={selectedTicket.image} alt={selectedTicket.name} />
+            <h2>{selectedTicket.name}</h2>
+            <h3>{selectedTicket.place}</h3>
+            <p>{selectedTicket.description}</p>
+            <h3>₹{selectedTicket.price}</h3>
+          </div>
+        </div>
+      )}
     </>
   );
 }
