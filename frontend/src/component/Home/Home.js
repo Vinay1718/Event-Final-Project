@@ -13,6 +13,26 @@ import h7 from "../asset/h7.jpeg";
 import h8 from "../asset/h8.jpg";
 import h9 from "../asset/h9.jpg";
 import h10 from "../asset/h10.png";
+import h32 from "../asset/h32.png";
+import h33 from "../asset/h33.png";
+import h34 from "../asset/h34.png";
+import h35 from "../asset/h35.png";
+import h36 from "../asset/h36.png";
+import h37 from "../asset/h37.png";
+import h38 from "../asset/h38.png";
+import h39 from "../asset/h39.png";
+import h40 from "../asset/h40.png";
+import h41 from "../asset/h41.png";
+import h42 from "../asset/h42.png";
+import h43 from "../asset/h43.png";
+import h44 from "../asset/h44.png";
+import h45 from "../asset/h45.png";
+import h46 from "../asset/h46.png";
+import h47 from "../asset/h47.png";
+import h48 from "../asset/h48.png";
+import h49 from "../asset/h49.png";
+import h50 from "../asset/h50.png";
+
 import h11 from "../asset/h11.jpg";
 import h12 from "../asset/h12.png";
 import h13 from "../asset/h13.jpg";
@@ -66,26 +86,26 @@ export default function Home({ cart, setCart }) {
     { id: 28, name: "Chess Championship", place: "Udaipur", price: 300, image: h27, description: "Battle it out on the chessboard with top-ranking players." },
     { id: 29, name: "Theater Play", place: "Varanasi", price: 750, image: h28, description: "A captivating live theater performance by talented actors." },
     { id: 30, name: "Spiritual Retreat", place: "Haridwar", price: 400, image: h29, description: "A rejuvenating retreat to relax and connect with your inner self." },
-    { id: 31, name: "Horse Racing", place: "Pune", price: 2500, image: h1, description: "Experience the thrill of speed and elegance as top-tier horses compete for glory on Pune’s prestigious racetrack." },
-    { id: 32, name: "Wine Tasting", place: "Nasik", price: 1800, image: h1, description: "Indulge in the finest wines of Nasik, India's wine capital, with guided tastings and food pairings in a luxurious vineyard setting." },
-    { id: 33, name: "Ballet Show", place: "Chennai", price: 1300, image: h1, description: "Witness a mesmerizing ballet performance by world-class dancers, bringing classical and contemporary dance to life on stage." },
-    { id: 34, name: "Astronomy Night", place: "Bangalore", price: 900, image: h1, description: "Gaze at the wonders of the cosmos with high-powered telescopes and expert astronomers guiding you through celestial marvels." },
-    { id: 35, name: "Drone Racing", place: "Delhi", price: 600, image: h1, description: "Watch high-speed drones zip through challenging obstacle courses as pilots showcase their precision and skill in an electrifying competition." },
-    { id: 36, name: "Fishing Tournament", place: "Kerala", price: 450, image: h1, description: "Join a thrilling fishing challenge in Kerala’s serene backwaters, where anglers compete to reel in the biggest catch of the day!" },
-    { id: 37, name: "Adventure Trekking", place: "Manali", price: 1600, image: h1, description: "Embark on an exhilarating trek through Manali’s breathtaking landscapes, crossing lush forests, rivers, and snow-capped mountains." },
-    { id: 38, name: "Snowboarding Camp", place: "Gulmarg", price: 2500, image: h1, description: "Glide through fresh powder and perfect your snowboarding skills with expert instructors in the winter wonderland of Gulmarg." },
-    { id: 39, name: "Kite Festival", place: "Ahmedabad", price: 200, image: h1, description: "Watch the sky come alive with colorful kites from around the world as participants showcase incredible kite-flying artistry and techniques." },
-    { id: 40, name: "Puppet Show", place: "Rajasthan", price: 350, image: h1, description: "Immerse yourself in Rajasthan’s vibrant culture with an enchanting puppet show, narrating folk tales with traditional music and dance." },
-    { id: 41, name: "International Film Awards", place: "Mumbai", price: 5000, image: h1, description: "Join the glamour and excitement of cinema’s biggest night, featuring red carpet moments, celebrity appearances, and award-winning films." },
-    { id: 42, name: "Marathon", place: "Hyderabad", price: 150, image: h1, description: "Push your limits and run through Hyderabad’s scenic routes, cheered on by an energetic crowd in this thrilling endurance race." },
-    { id: 43, name: "Tennis Open", place: "Chennai", price: 2200, image: h1, description: "Catch the action as top-ranked tennis players battle it out in Chennai’s premier tournament, showcasing power, precision, and agility." },
-    { id: 44, name: "Badminton Tournament", place: "Lucknow", price: 800, image: h1, description: "Watch skilled shuttlers compete in an intense showdown, featuring fast rallies and breathtaking smashes at Lucknow’s biggest badminton event." },
-    { id: 45, name: "Rowing Championship", place: "Kolkata", price: 950, image: h1, description: "Feel the adrenaline as rowers power through the waters in a thrilling test of strength, endurance, and teamwork at this premier championship." },
-    { id: 46, name: "Food Tasting Event", place: "Pondicherry", price: 1250, image: h1, description: "Savor exquisite flavors and explore a world of gourmet delights with renowned chefs presenting unique culinary masterpieces." },
-    { id: 47, name: "Skydiving Experience", place: "Mysore", price: 3500, image: h1, description: "Feel the ultimate rush of freefall as you jump from thousands of feet above, witnessing breathtaking aerial views of Mysore." },
-    { id: 48, name: "Hot Air Balloon Ride", place: "Jaipur", price: 2800, image: h1, description: "Soar above Jaipur’s majestic forts and palaces in a magical hot air balloon ride, offering panoramic views of the Pink City." },
-    { id: 49, name: "Ice Skating Show", place: "Shimla", price: 1300, image: h1, description: "Experience a dazzling ice-skating spectacle featuring world-class performers executing gravity-defying spins and artistic routines." },
-    { id: 50, name: "Zumba Festival", place: "Pune", price: 450, image: h1, description: "Dance, sweat, and have fun at Pune’s biggest Zumba festival, where fitness meets rhythm in an electrifying atmosphere." }
+    { id: 31, name: "Horse Racing", place: "Pune", price: 2500, image: h30, description: "Experience the thrill of speed and elegance as top-tier horses compete for glory on Pune’s prestigious racetrack." },
+    { id: 32, name: "Wine Tasting", place: "Nasik", price: 1800, image: h32, description: "Indulge in the finest wines of Nasik, India's wine capital, with guided tastings and food pairings in a luxurious vineyard setting." },
+    { id: 33, name: "Ballet Show", place: "Chennai", price: 1300, image: h33, description: "Witness a mesmerizing ballet performance by world-class dancers, bringing classical and contemporary dance to life on stage." },
+    { id: 34, name: "Astronomy Night", place: "Bangalore", price: 900, image: h34, description: "Gaze at the wonders of the cosmos with high-powered telescopes and expert astronomers guiding you through celestial marvels." },
+    { id: 35, name: "Drone Racing", place: "Delhi", price: 600, image: h35, description: "Watch high-speed drones zip through challenging obstacle courses as pilots showcase their precision and skill in an electrifying competition." },
+    { id: 36, name: "Fishing Tournament", place: "Kerala", price: 450, image: h36, description: "Join a thrilling fishing challenge in Kerala’s serene backwaters, where anglers compete to reel in the biggest catch of the day!" },
+    { id: 37, name: "Adventure Trekking", place: "Manali", price: 1600, image: h37, description: "Embark on an exhilarating trek through Manali’s breathtaking landscapes, crossing lush forests, rivers, and snow-capped mountains." },
+    { id: 38, name: "Snowboarding Camp", place: "Gulmarg", price: 2500, image: h38, description: "Glide through fresh powder and perfect your snowboarding skills with expert instructors in the winter wonderland of Gulmarg." },
+    { id: 39, name: "Kite Festival", place: "Ahmedabad", price: 200, image: h39, description: "Watch the sky come alive with colorful kites from around the world as participants showcase incredible kite-flying artistry and techniques." },
+    { id: 40, name: "Puppet Show", place: "Rajasthan", price: 350, image: h40, description: "Immerse yourself in Rajasthan’s vibrant culture with an enchanting puppet show, narrating folk tales with traditional music and dance." },
+    { id: 41, name: "International Film Awards", place: "Mumbai", price: 5000, image: h41, description: "Join the glamour and excitement of cinema’s biggest night, featuring red carpet moments, celebrity appearances, and award-winning films." },
+    { id: 42, name: "Marathon", place: "Hyderabad", price: 150, image: h42, description: "Push your limits and run through Hyderabad’s scenic routes, cheered on by an energetic crowd in this thrilling endurance race." },
+    { id: 43, name: "Tennis Open", place: "Chennai", price: 2200, image: h43, description: "Catch the action as top-ranked tennis players battle it out in Chennai’s premier tournament, showcasing power, precision, and agility." },
+    { id: 44, name: "Badminton Tournament", place: "Lucknow", price: 800, image: h44, description: "Watch skilled shuttlers compete in an intense showdown, featuring fast rallies and breathtaking smashes at Lucknow’s biggest badminton event." },
+    { id: 45, name: "Rowing Championship", place: "Kolkata", price: 950, image: h45, description: "Feel the adrenaline as rowers power through the waters in a thrilling test of strength, endurance, and teamwork at this premier championship." },
+    { id: 46, name: "Food Tasting Event", place: "Pondicherry", price: 1250, image: h46, description: "Savor exquisite flavors and explore a world of gourmet delights with renowned chefs presenting unique culinary masterpieces." },
+    { id: 47, name: "Skydiving Experience", place: "Mysore", price: 3500, image: h47, description: "Feel the ultimate rush of freefall as you jump from thousands of feet above, witnessing breathtaking aerial views of Mysore." },
+    { id: 48, name: "Hot Air Balloon Ride", place: "Jaipur", price: 2800, image: h48, description: "Soar above Jaipur’s majestic forts and palaces in a magical hot air balloon ride, offering panoramic views of the Pink City." },
+    { id: 49, name: "Ice Skating Show", place: "Shimla", price: 1300, image: h49, description: "Experience a dazzling ice-skating spectacle featuring world-class performers executing gravity-defying spins and artistic routines." },
+    { id: 50, name: "Zumba Festival", place: "Pune", price: 450, image: h50, description: "Dance, sweat, and have fun at Pune’s biggest Zumba festival, where fitness meets rhythm in an electrifying atmosphere." }
 
 ];
 
