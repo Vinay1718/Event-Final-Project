@@ -13,6 +13,26 @@ import h7 from "../asset/h7.jpeg";
 import h8 from "../asset/h8.jpg";
 import h9 from "../asset/h9.jpg";
 import h10 from "../asset/h10.png";
+import h11 from "../asset/h11.jpg";
+import h12 from "../asset/h12.png";
+import h13 from "../asset/h13.jpg";
+import h14 from "../asset/h14.avif";
+import h15 from "../asset/h15.avif";
+import h16 from "../asset/h16.jpg";
+import h17 from "../asset/h17.webp";
+import h18 from "../asset/h18.avif";
+import h19 from "../asset/h19.jpg";
+import h20 from "../asset/h20.webp";
+import h21 from "../asset/h21.jpeg";
+import h22 from "../asset/h22.jpeg";
+import h23 from "../asset/h23.webp";
+import h24 from "../asset/h24.webp";
+import h25 from "../asset/h25.webp";
+import h26 from "../asset/h26.webp";
+import h27 from "../asset/h27.webp";
+import h28 from "../asset/h28.webp";
+import h29 from "../asset/h29.webp";
+import h30 from "../asset/h30.webp";
 
 export default function Home({ cart, setCart }) {
   const tickets = [
@@ -26,26 +46,26 @@ export default function Home({ cart, setCart }) {
     { id: 8, name: "Film Festival", place: "Jaipur", price: 500, image: h8, description: "Enjoy a selection of award-winning films from around the world." },
     { id: 9, name: "Poetry Slam", place: "Ahmedabad", price: 350, image: h9, description: "An evening of powerful poetry and spoken word performances." },
     { id: 10, name: "Fashion Show", place: "Lucknow", price: 2000, image: h10, description: "A glamorous showcase of the latest trends in fashion and couture." },
-    { id: 11, name: "Gaming Tournament", place: "Chandigarh", price: 900, image: h10, description: "Compete with the best gamers in an adrenaline-packed competition." },
-    { id: 12, name: "Tech Expo", place: "Indore", price: 1100, image: h1, description: "Explore the latest technological innovations and futuristic gadgets." },
-    { id: 13, name: "Stand-up Comedy", place: "Goa", price: 750, image: h1, description: "A rib-tickling evening with the best stand-up comedians." },
-    { id: 14, name: "Jazz Night", place: "Nagpur", price: 650, image: h1, description: "Immerse yourself in the smooth and soulful tunes of jazz." },
-    { id: 15, name: "Cricket Match", place: "Bhopal", price: 300, image: h1, description: "Watch your favorite teams battle it out on the cricket field." },
-    { id: 16, name: "Football Match", place: "Visakhapatnam", price: 400, image: h1, description: "Experience the thrill of live football action with top teams." },
-    { id: 17, name: "Bollywood Night", place: "Surat", price: 1300, image: h1, description: "A dazzling night filled with Bollywood music, dance, and glamour." },
-    { id: 18, name: "EDM Festival", place: "Patna", price: 1700, image: h1, description: "Dance to electrifying beats by world-class DJs and EDM artists." },
-    { id: 19, name: "Book Fair", place: "Thiruvananthapuram", price: 200, image: h1, description: "A haven for book lovers with a wide range of books and authors." },
-    { id: 20, name: "Photography Workshop", place: "Coimbatore", price: 500, image: h1, description: "Learn photography tips and tricks from professional photographers." },
-    { id: 21, name: "Street Play", place: "Mysore", price: 250, image: h1, description: "Enjoy thought-provoking performances by talented street artists." },
-    { id: 22, name: "Carnival", place: "Ranchi", price: 700, image: h1, description: "A fun-filled event with games, rides, and cultural performances." },
-    { id: 23, name: "Auto Expo", place: "Raipur", price: 1400, image: h1, description: "Discover the latest cars, bikes, and automobile technology." },
-    { id: 24, name: "Cycling Marathon", place: "Dehradun", price: 100, image: h1, description: "Join a thrilling cycling adventure through scenic routes." },
-    { id: 25, name: "Science Fair", place: "Shimla", price: 600, image: h1, description: "Showcasing incredible science experiments and innovations." },
-    { id: 26, name: "Startup Summit", place: "Guwahati", price: 800, image: h1, description: "Network with entrepreneurs and investors in the startup world." },
-    { id: 27, name: "Social Awareness Camp", place: "Jodhpur", price: 50, image: h1, description: "Engage in meaningful discussions and initiatives for social change." },
-    { id: 28, name: "Chess Championship", place: "Udaipur", price: 300, image: h1, description: "Battle it out on the chessboard with top-ranking players." },
-    { id: 29, name: "Theater Play", place: "Varanasi", price: 750, image: h1, description: "A captivating live theater performance by talented actors." },
-    { id: 30, name: "Spiritual Retreat", place: "Haridwar", price: 400, image: h1, description: "A rejuvenating retreat to relax and connect with your inner self." },
+    { id: 11, name: "Gaming Tournament", place: "Chandigarh", price: 900, image: h11, description: "Compete with the best gamers in an adrenaline-packed competition." },
+    { id: 12, name: "Tech Expo", place: "Indore", price: 1100, image: h12, description: "Explore the latest technological innovations and futuristic gadgets." },
+    { id: 13, name: "Stand-up Comedy", place: "Goa", price: 750, image: h13, description: "A rib-tickling evening with the best stand-up comedians." },
+    { id: 14, name: "Jazz Night", place: "Nagpur", price: 650, image: h14, description: "Immerse yourself in the smooth and soulful tunes of jazz." },
+    { id: 15, name: "Cricket Match", place: "Bhopal", price: 300, image: h15, description: "Watch your favorite teams battle it out on the cricket field." },
+    { id: 16, name: "Football Match", place: "Visakhapatnam", price: 400, image: h16, description: "Experience the thrill of live football action with top teams." },
+    { id: 17, name: "Bollywood Night", place: "Surat", price: 1300, image: h17, description: "A dazzling night filled with Bollywood music, dance, and glamour." },
+    { id: 18, name: "EDM Festival", place: "Patna", price: 1700, image: h18, description: "Dance to electrifying beats by world-class DJs and EDM artists." },
+    { id: 19, name: "Book Fair", place: "Thiruvananthapuram", price: 200, image: h19, description: "A haven for book lovers with a wide range of books and authors." },
+    { id: 20, name: "Photography Workshop", place: "Coimbatore", price: 500, image: h20, description: "Learn photography tips and tricks from professional photographers." },
+    { id: 21, name: "Street Play", place: "Mysore", price: 250, image: h21, description: "Enjoy thought-provoking performances by talented street artists." },
+    { id: 22, name: "Carnival", place: "Ranchi", price: 700, image: h30, description: "A fun-filled event with games, rides, and cultural performances." },
+    { id: 23, name: "Auto Expo", place: "Raipur", price: 1400, image: h22, description: "Discover the latest cars, bikes, and automobile technology." },
+    { id: 24, name: "Cycling Marathon", place: "Dehradun", price: 100, image: h23, description: "Join a thrilling cycling adventure through scenic routes." },
+    { id: 25, name: "Science Fair", place: "Shimla", price: 600, image: h24, description: "Showcasing incredible science experiments and innovations." },
+    { id: 26, name: "Startup Summit", place: "Guwahati", price: 800, image: h25, description: "Network with entrepreneurs and investors in the startup world." },
+    { id: 27, name: "Social Awareness Camp", place: "Jodhpur", price: 50, image: h26, description: "Engage in meaningful discussions and initiatives for social change." },
+    { id: 28, name: "Chess Championship", place: "Udaipur", price: 300, image: h27, description: "Battle it out on the chessboard with top-ranking players." },
+    { id: 29, name: "Theater Play", place: "Varanasi", price: 750, image: h28, description: "A captivating live theater performance by talented actors." },
+    { id: 30, name: "Spiritual Retreat", place: "Haridwar", price: 400, image: h29, description: "A rejuvenating retreat to relax and connect with your inner self." },
     { id: 31, name: "Horse Racing", place: "Pune", price: 2500, image: h1, description: "Experience the thrill of speed and elegance as top-tier horses compete for glory on Pune’s prestigious racetrack." },
     { id: 32, name: "Wine Tasting", place: "Nasik", price: 1800, image: h1, description: "Indulge in the finest wines of Nasik, India's wine capital, with guided tastings and food pairings in a luxurious vineyard setting." },
     { id: 33, name: "Ballet Show", place: "Chennai", price: 1300, image: h1, description: "Witness a mesmerizing ballet performance by world-class dancers, bringing classical and contemporary dance to life on stage." },

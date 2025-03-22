@@ -20,6 +20,7 @@ export default function Cart({ cart, setCart }) {
               <div className="cart-details">
                 <h3>{item.name}</h3>
                 <p>{item.place}</p>
+                <p>{item.description}</p>
                 <p>₹{item.price}</p>
                 <button className="remove-btn" onClick={() => removeFromCart(item.id)}><i class="fa-regular fa-trash-can"></i></button>
               </div>
