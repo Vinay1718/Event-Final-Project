@@ -2,7 +2,6 @@ import React from "react";
 import "./Cart.css";
 
 export default function Cart({ cart, setCart }) {
-  /** ✅ Function to Remove Items from Cart */
   const removeFromCart = (id) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
