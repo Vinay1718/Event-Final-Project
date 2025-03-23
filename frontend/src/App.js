@@ -8,6 +8,11 @@ import Cart from './component/Cart/Cart';
 import Payments from './component/Payments/Payments';
 import Support from './component/Support/Support';
 import Tickets from './component/Tickets/Tickets';
+import Address from './component/Settings/Address/Address';
+import Edit from './component/Settings/Edit/Edit';
+import Faq from './component/Settings/Faq/Faq';
+import History from './component/Settings/History/History';
+
 import { useState } from 'react';
 
 function App() {
@@ -21,6 +26,10 @@ function App() {
             <Routes>
               <Route path='/' element={<Home cart={cart} setCart={setCart} />} />
               <Route path='/settings' element={<Settings />} />
+              <Route path='/settings/address' element={<Address />} />
+              <Route path='/settings/edit' element={<Edit />} />
+              <Route path='/settings/faq' element={<Faq />} />
+              <Route path='/settings/history' element={<History />} />
               <Route path='/orders' element={<Orders />} />
               <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
               <Route path='/payments' element={<Payments />} />

@@ -1,0 +1,55 @@
+.orders-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.order-slip {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: left;
+}
+
+.order-slip h3 {
+    border-bottom: 2px solid #f00;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f00;
+    color: white;
+}
+
+.print-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+@media print {
+    .print-btn {
+        display: none;
+    }
+}

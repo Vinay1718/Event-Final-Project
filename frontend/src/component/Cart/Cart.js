@@ -72,7 +72,7 @@ export default function Cart({ cart, setCart }) {
           <div className="cart-total">Total: ₹{totalAmount}</div>
           <div className="cart-actions">
             <button className="checkout-btn" onClick={() => navigate('/')}>Back to Page</button>
-            <button className="back-btn" onClick={() => navigate('/checkout')}>Checkout</button>
+            <button className="back-btn" onClick={() => navigate('/settings/edit')}>Checkout</button>
           </div>
         </div>
       )}
