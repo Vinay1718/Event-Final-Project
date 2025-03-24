@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Cart.css";
@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Cart({ cart, setCart }) {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const updateQuantity = (id, delta) => {
     setCart((prevCart) =>
@@ -25,7 +29,6 @@ export default function Cart({ cart, setCart }) {
       hideProgressBar: true,
       pauseOnHover: false,
       draggable: false,
-      progress: undefined,
       style: {
         background: "linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7))",
         color: "#fff",

@@ -8,12 +8,13 @@ export default function Orders() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cartData")) || [];
-    setCart(savedCart);
-
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
     const savedUser = JSON.parse(localStorage.getItem("formData")) || {};
     setUserDetails(savedUser);
-  }, []);
+  }, []); 
 
   const getTotalAmount = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -22,9 +23,9 @@ export default function Orders() {
   const handlePrint = () => {
     window.print();
     setTimeout(() => {
-      localStorage.removeItem("cartData");
+      localStorage.removeItem("cart");
       setCart([]);
-      navigate("/"); 
+      navigate("/");
     }, 500);
   };
 
