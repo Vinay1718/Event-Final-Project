@@ -7,7 +7,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; 
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px; 
+  }
+}
+
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+  code {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  code {
+    font-size: 12px;
+    word-wrap: break-word; 
+  }
 }

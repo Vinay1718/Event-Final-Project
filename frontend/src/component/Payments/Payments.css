@@ -101,3 +101,46 @@ h2 {
     color: #555;
     margin-top: 15px;
 }
+
+@media (max-width: 1024px) {
+    .payment-container {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    .payment-option {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .confirm-btn {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .payment-container {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .payment-option {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .payment-option i {
+        font-size: 18px;
+    }
+
+    .confirm-btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .secure-text {
+        font-size: 12px;
+    }
+}

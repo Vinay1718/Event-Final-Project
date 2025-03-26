@@ -80,6 +80,17 @@
     color: #f01919;
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .ticket-container {
+        gap: 15px;
+    }
+
+    .card {
+        width: 250px;
+    }
+}
+
 @media (max-width: 768px) {
     .ticket-container {
         flex-direction: column;
@@ -88,6 +99,35 @@
 
     .card {
         width: 90%;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .card button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 10px;
     }
 }
 
@@ -129,7 +169,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
 .close-btn {
     position: absolute;

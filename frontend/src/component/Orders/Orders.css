@@ -53,3 +53,53 @@ th {
         display: none;
     }
 }
+
+@media (max-width: 1024px) {
+    .orders-container {
+        width: 90%;
+    }
+
+    .order-slip {
+        padding: 15px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .print-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .orders-container {
+        width: 95%;
+    }
+
+    .order-slip {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 12px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    .print-btn {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+    }
+}

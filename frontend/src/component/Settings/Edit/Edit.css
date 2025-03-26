@@ -30,6 +30,7 @@ h2 {
     flex: 1 1 calc(50% - 10px);
     text-align: left;
 }
+
 .form-group.full-width {
     flex: 1 1 100%;
 }
@@ -53,7 +54,6 @@ h2 {
     outline: none;
 }
 
-/* Red border on focus */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -83,4 +83,51 @@ h2 {
 
 .update-btn:hover {
     background: #c9302c;
+}
+
+@media (max-width: 768px) {
+    .edit-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .edit-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .edit-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .edit-subtext {
+        font-size: 13px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .update-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
