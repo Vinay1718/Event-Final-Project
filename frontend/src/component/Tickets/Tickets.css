@@ -1,0 +1,15 @@
+.ticket{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.event{
+    width: 300px;
+    height: 200px;
+    border: 0.8px solid red;
+    text-align: center;
+    padding: 4px 6px;
+}
