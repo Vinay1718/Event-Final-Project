@@ -1,0 +1,50 @@
+import React from 'react'
+import './Conference.css'
+
+import e1 from '../images/e1.webp';
+import e2 from '../images/e2.webp';
+import e3 from '../images/e3.webp';
+import e4 from '../images/e4.webp';
+import e5 from '../images/e5.webp';
+import e6 from '../images/e6.webp';
+import e7 from '../images/e7.webp';
+import e8 from '../images/e8.webp';
+import e9 from '../images/e9.webp';
+import e10 from '../images/e10.webp';
+import e11 from '../images/e11.webp';
+import e12 from '../images/e12.webp';
+
+export default function Conference() {
+  const conferences = [
+    { id: 1, name: "Business Conference", description: "A gathering of professionals to discuss market trends and business strategies.", amount: 5000, location: "New York, USA", time: "10:00 AM - 4:00 PM", date: "2025-06-15", image: e1 },
+    { id: 2, name: "Technology Conference", description: "An event showcasing the latest advancements in AI, cybersecurity, and software development.", amount: 7000, location: "San Francisco, USA", time: "9:30 AM - 5:00 PM", date: "2025-07-10", image: e2 },
+    { id: 3, name: "Healthcare Conference", description: "A platform for medical professionals to discuss innovations in healthcare and treatment methodologies.", amount: 6000, location: "London, UK", time: "8:00 AM - 3:30 PM", date: "2025-08-20", image: e3 },
+    { id: 4, name: "Education Conference", description: "An event focused on new teaching methodologies, educational technology, and curriculum advancements.", amount: 4000, location: "Toronto, Canada", time: "9:00 AM - 2:00 PM", date: "2025-09-05", image: e4 },
+    { id: 5, name: "Marketing Conference", description: "Industry leaders discuss digital marketing, branding, and consumer engagement strategies.", amount: 5500, location: "Sydney, Australia", time: "11:00 AM - 5:00 PM", date: "2025-09-25", image: e5 },
+    { id: 6, name: "Finance & Investment Conference", description: "A global platform for discussing financial markets, investment strategies, and economic trends.", amount: 8000, location: "Dubai, UAE", time: "10:00 AM - 6:00 PM", date: "2025-10-12", image: e6 },
+    { id: 7, name: "Leadership & HR Conference", description: "A forum for HR professionals and leaders to explore team management, recruitment, and workplace culture.", amount: 4500, location: "Berlin, Germany", time: "9:30 AM - 4:30 PM", date: "2025-11-03", image: e7 },
+    { id: 8, name: "Startup & Entrepreneurship Conference", description: "Entrepreneurs and investors connect to discuss innovation, funding, and business scaling.", amount: 6500, location: "Singapore", time: "10:00 AM - 5:30 PM", date: "2025-11-22", image: e8 },
+    { id: 9, name: "Legal Conference", description: "A gathering of legal professionals to discuss policies, new regulations, and case law developments.", amount: 4800, location: "Paris, France", time: "9:00 AM - 3:00 PM", date: "2025-12-10", image: e9 },
+    { id: 10, name: "Environmental Conference", description: "Experts discuss climate change, sustainability, and renewable energy innovations.", amount: 5200, location: "Amsterdam, Netherlands", time: "8:30 AM - 4:00 PM", date: "2026-01-15", image: e10 },
+    { id: 11, name: "Media & Journalism Conference", description: "Journalists and media professionals discuss the future of news, press freedom, and digital journalism.", amount: 5000, location: "Los Angeles, USA", time: "10:00 AM - 4:30 PM", date: "2026-02-07", image: e11 },
+    { id: 12, name: "Government & Policy Conference", description: "Officials and policy experts discuss governance, legislation, and global political trends.", amount: 6000, location: "Washington D.C., USA", time: "9:00 AM - 5:00 PM", date: "2026-03-20", image: e12 }
+  ];
+  return (
+    <>
+      <div className='ticket-container'>
+        {
+          conferences.map((conference) => [
+            <div key={conference.id} className='card'>
+              <img src={conference.image} alt={conference.name} />
+              <h2>{conference.name}</h2>
+              <h3>{conference.location}</h3>
+              <h3>₹{conference.amount}</h3>
+              <button>View Details</button>
+              <button>Add to Cart</button>
+            </div>
+          ])
+        }
+      </div>
+    </>
+  )
+}

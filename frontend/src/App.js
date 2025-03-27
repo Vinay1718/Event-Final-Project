@@ -13,6 +13,9 @@ import Edit from './component/Settings/Edit/Edit';
 import Faq from './component/Settings/Faq/Faq';
 import History from './component/Settings/History/History';
 
+
+import Conference from './component/Tickets/Conference/Conference';
+
 import { useState } from 'react';
 
 function App() {
@@ -35,6 +38,7 @@ function App() {
               <Route path='/payments' element={<Payments />} />
               <Route path='/support' element={<Support />} />
               <Route path='/tickets' element={<Tickets />} />
+              <Route path='/tickets/conference' element={<Conference />} />
             </Routes>
           </div>
         </div>
