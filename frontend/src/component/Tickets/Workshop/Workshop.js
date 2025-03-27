@@ -1,0 +1,54 @@
+import React from 'react'
+import './Workshop.css'
+
+import e37 from '../images/e37.webp';
+import e38 from '../images/e38.webp';
+import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+// import e39 from '../images/e39.webp';
+
+
+
+export default function Workshop() {
+
+  const workshops = [
+    { id: 1, name: "Leadership & Management Workshop", description: "Develop leadership skills, team management, and strategic decision-making abilities.", amount: 1500, location: "New York, USA", time: "10:00 AM - 3:00 PM", date: "2025-06-15", image: e37 },
+    { id: 2, name: "Entrepreneurship & Startup Workshop", description: "Learn how to launch and scale a startup, pitch to investors, and develop business strategies.", amount: 1800, location: "San Francisco, USA", time: "9:30 AM - 2:30 PM", date: "2025-07-10", image: e38 },
+    { id: 3, name: "Public Speaking & Communication Workshop", description: "Enhance public speaking, confidence, and communication skills with professional training.", amount: 1300, location: "London, UK", time: "11:00 AM - 4:00 PM", date: "2025-05-22", image: e39 },
+    { id: 4, name: "Digital Marketing & SEO Workshop", description: "Gain expertise in digital marketing, SEO, content creation, and online branding strategies.", amount: 1600, location: "Toronto, Canada", time: "1:00 PM - 5:00 PM", date: "2025-08-05", image: e39 },
+    { id: 5, name: "Photography & Videography Workshop", description: "Improve photography and videography skills, including lighting, composition, and editing.", amount: 1400, location: "Paris, France", time: "10:00 AM - 3:00 PM", date: "2025-06-30", image: e39 },
+    { id: 6, name: "Coding & Software Development Workshop", description: "Learn programming languages, software development techniques, and app building.", amount: 2000, location: "Berlin, Germany", time: "9:00 AM - 2:00 PM", date: "2025-09-12", image: e39 },
+    { id: 7, name: "Graphic Design & UI/UX Workshop", description: "Master graphic design and user experience concepts using tools like Adobe XD and Figma.", amount: 1700, location: "Sydney, Australia", time: "10:30 AM - 4:30 PM", date: "2025-07-18", image: e39 },
+    { id: 8, name: "Finance & Investment Planning Workshop", description: "Learn financial planning, investment strategies, and money management techniques.", amount: 1900, location: "Dubai, UAE", time: "11:00 AM - 5:00 PM", date: "2025-08-25", image: e39 },
+    { id: 9, name: "Health & Wellness Workshop", description: "Improve mental and physical well-being through yoga, mindfulness, and fitness training.", amount: 1200, location: "Bali, Indonesia", time: "8:00 AM - 1:00 PM", date: "2025-06-10", image: e39 },
+    { id: 10, name: "Artificial Intelligence & Machine Learning Workshop", description: "Understand AI and ML fundamentals with hands-on projects and real-world applications.", amount: 2200, location: "Singapore", time: "9:00 AM - 3:00 PM", date: "2025-10-05", image: e39 },
+    { id: 11, name: "Content Writing & Blogging Workshop", description: "Enhance writing skills, storytelling techniques, and blogging strategies for digital success.", amount: 1300, location: "Los Angeles, USA", time: "10:00 AM - 3:00 PM", date: "2025-09-20", image: e39 },
+    { id: 12, name: "Cybersecurity & Ethical Hacking Workshop", description: "Learn about cybersecurity threats, ethical hacking, and protecting online systems.", amount: 2100, location: "Tokyo, Japan", time: "9:30 AM - 2:30 PM", date: "2025-11-15", image: e39 }
+];
+
+
+
+  return (
+    <div className='ticket-container'>
+    {
+      workshops.map((workshop) => [
+        <div key={workshop.id} className='card'>
+          <img src={workshop.image} alt={workshop.name} />
+          <h2>{workshop.name}</h2>
+          <h3>{workshop.location}</h3>
+          <h3>₹{workshop.amount}</h3>
+          <button>View Details</button>
+          <button>Add to Cart</button>
+        </div>
+      ])
+    }
+  </div>
+  )
+}

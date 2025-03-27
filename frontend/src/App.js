@@ -15,6 +15,10 @@ import History from './component/Settings/History/History';
 
 
 import Conference from './component/Tickets/Conference/Conference';
+import Fundraiser from './component/Tickets/Fundraiser/Fundraiser';
+import Webinar from './component/Tickets/Webinar/Webinar';
+import Workshop from './component/Tickets/Workshop/Workshop';
+
 
 import { useState } from 'react';
 
@@ -39,6 +43,9 @@ function App() {
               <Route path='/support' element={<Support />} />
               <Route path='/tickets' element={<Tickets />} />
               <Route path='/tickets/conference' element={<Conference />} />
+              <Route path='/tickets/fundraiser' element={<Fundraiser />} />
+              <Route path='/tickets/workshop' element={<Workshop />} />
+              <Route path='/tickets/webinar' element={<Webinar />} />
             </Routes>
           </div>
         </div>
