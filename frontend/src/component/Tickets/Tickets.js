@@ -14,7 +14,7 @@ export default function Tickets() {
     { id: 5, name: "Networking Event", icon: "fa-solid fa-handshake", description: "Social gathering for professionals to build business relationships.", address: "/tickets/networking-event" },
     { id: 6, name: "Trade Show", icon: "fa-solid fa-store", description: "Exhibition where businesses showcase and promote products or services.", address: "/tickets/trade-show" },
     { id: 7, name: "Concert", icon: "fa-solid fa-music", description: "Live music performance featuring artists and bands.", address: "/tickets/concert" },
-    { id: 8, name: "Sports Event", icon: "fa-solid fa-football-ball", description: "Competitive sporting matches for entertainment and team spirit.", address: "/tickets/sports-event" },
+    { id: 8, name: "Sport Events", icon: "fa-solid fa-football-ball", description: "Competitive sporting matches for entertainment and team spirit.", address: "/tickets/sport-events" },
     { id: 9, name: "Festival", icon: "fa-solid fa-theater-masks", description: "Celebration featuring music, food, art, and cultural performances.", address: "/tickets/festival" },
     { id: 10, name: "Exhibition", icon: "fa-solid fa-paint-brush", description: "Public display of art, photography, or technological innovations.", address: "/tickets/exhibition" },
     { id: 11, name: "Hackathon", icon: "fa-solid fa-code", description: "Coding competition where developers create innovative solutions.", address: "/tickets/hackathon" },
@@ -34,7 +34,7 @@ export default function Tickets() {
       {
         tickets.map((ticket)=>[
           <div key={ticket.id} className='event'>
-            <img src={ticket.icon}></img>
+            <img src={ticket.icon} alt="error"></img>
             <h2 onClick={()=> Naviagte(ticket.address)}>{ticket.name}</h2>
             <p>{ticket.description}</p>
             

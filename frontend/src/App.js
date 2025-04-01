@@ -18,6 +18,9 @@ import Conference from './component/Tickets/Conference/Conference';
 import Fundraiser from './component/Tickets/Fundraiser/Fundraiser';
 import Webinar from './component/Tickets/Webinar/Webinar';
 import Workshop from './component/Tickets/Workshop/Workshop';
+import Trade from './component/Tickets/Trade/Trade';
+import Sport from './component/Tickets/Sport/Sport';
+import Seminar from './component/Tickets/Seminar/Seminar';
 
 
 import { useState } from 'react';
@@ -46,6 +49,9 @@ function App() {
               <Route path='/tickets/fundraiser' element={<Fundraiser />} />
               <Route path='/tickets/workshop' element={<Workshop />} />
               <Route path='/tickets/webinar' element={<Webinar />} />
+              <Route path='/tickets/trade-show' element={<Trade />} />
+              <Route path='/tickets/sport-events' element={<Sport />} />
+              <Route path='/tickets/seminar' element={<Seminar />} />
             </Routes>
           </div>
         </div>
