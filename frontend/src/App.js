@@ -21,7 +21,19 @@ import Workshop from './component/Tickets/Workshop/Workshop';
 import Trade from './component/Tickets/Trade/Trade';
 import Sport from './component/Tickets/Sport/Sport';
 import Seminar from './component/Tickets/Seminar/Seminar';
-
+import Product from './component/Tickets/Product/Product';
+import Panel from './component/Tickets/Panel/Panel';
+import Networking from './component/Tickets/Networking/Networking';
+import Hackathon from './component/Tickets/Hackathon/Hackathon';
+import Gaming from './component/Tickets/Gaming/Gaming';
+import Festival from './component/Tickets/Festival/Festival';
+import Exhibition from './component/Tickets/Exhibition/Exhibition';
+import Concert from './component/Tickets/Concert/Concert';
+import Comedy from './component/Tickets/Comedy/Comedy';
+import Charity from './component/Tickets/Charity/Charity';
+import Booksigning from './component/Tickets/Booksigning/Booksigning';
+import Film from './component/Tickets/Film/Film';
+import Career from './component/Tickets/Career/Career';
 
 import { useState } from 'react';
 
@@ -52,6 +64,19 @@ function App() {
               <Route path='/tickets/trade-show' element={<Trade />} />
               <Route path='/tickets/sport-events' element={<Sport />} />
               <Route path='/tickets/seminar' element={<Seminar />} />
+              <Route path='/tickets/product-launch' element={<Product />} />
+              <Route path='/tickets/panel-discussion' element={<Panel />} />
+              <Route path='/tickets/networking-event' element={<Networking />} />
+              <Route path='/tickets/hackathon' element={<Hackathon />} />
+              <Route path='/tickets/gaming-tournament' element={<Gaming />} />
+              <Route path='/tickets/festival' element={<Festival />} />
+              <Route path='/tickets/exhibition' element={<Exhibition />} />
+              <Route path='/tickets/concert' element={<Concert/>} />
+              <Route path='/tickets/comedy-show' element={<Comedy/>} />
+              <Route path='/tickets/charity-gala' element={<Charity/>} />
+              <Route path='/tickets/book-signing' element={<Booksigning/>} />
+              <Route path='/tickets/film-screening' element={<Film/>} />
+              <Route path='/tickets/career-fair' element={<Career/>} />
             </Routes>
           </div>
         </div>
