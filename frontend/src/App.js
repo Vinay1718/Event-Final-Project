@@ -12,6 +12,8 @@ import Address from './component/Settings/Address/Address';
 import Edit from './component/Settings/Edit/Edit';
 import Faq from './component/Settings/Faq/Faq';
 import History from './component/Settings/History/History';
+import Login from './Authentication/Login/Login';
+import Signup from './Authentication/Signup/Signup';
 
 
 import Conference from './component/Tickets/Conference/Conference';
@@ -48,6 +50,8 @@ function App() {
             <Routes>
               <Route path='/' element={<Home cart={cart} setCart={setCart} />} />
               <Route path='/settings' element={<Settings />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<Signup />} />
               <Route path='/settings/address' element={<Address />} />
               <Route path='/settings/edit' element={<Edit />} />
               <Route path='/settings/faq' element={<Faq />} />

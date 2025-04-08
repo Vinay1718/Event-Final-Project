@@ -85,11 +85,15 @@ export default function Contact() {
       </div>
 
       <div className="contact-details">
-        <h3>Our Store</h3>
-        <p><strong>Address:</strong> 123 ujala, gorakh, India </p>
+        <p><strong>Address:</strong> 123 Ujala, Gorakh, India</p>
         <p><strong>Email:</strong> support@event.com</p>
         <p><strong>Phone:</strong> +123 456 7890</p>
+
+        <p style={{ marginTop: '20px', fontSize: '14px', color: '#777' }}>
+          &copy; 2025 Eventify. All rights reserved.
+        </p>
       </div>
+
     </div>
   );
 }
