@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 85px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+    overflow-x: hidden;
+}
+
+.sidebar:hover {
+    width: 260px; 
+}
+
+.sidebar h1 {
+    color: #f01919;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+    background: linear-gradient(45deg, rgba(240, 25, 25, 0.8), rgba(240, 25, 25, 0.5));
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h1 i {
+    margin-right: 8px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar ul li {
+    margin: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li:hover {
+    background: linear-gradient(135deg, rgba(240, 25, 25, 0.8), rgba(240, 25, 25, 0.6));
+    transform: translateX(5px);
+}
+
+.sidebar ul li:hover a {
+    color: white;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar ul li a span {
+    display: none;
+}
+
+.sidebar:hover ul li a span {
+    display: inline; 
+}
+
+.sidebar ul li a i {
+    margin-right: 12px;
+    font-size: 22px;
+    color: #f01919;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li:hover a i {
+    color: white;
+}
+
+.first, .second {
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 85px;
+    }
+
+    .sidebar:hover {
+        width: 180px;
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+    }
+
+    .sidebar ul li a i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 70px;
+        padding-top: 10px;
+    }
+
+    .sidebar:hover {
+        width: 70px;
+    }
+
+    .sidebar h1 {
+        font-size: 18px;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .sidebar ul {
+        margin: 10px 0;
+    }
+
+    .sidebar ul li {
+        padding: 10px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+        padding-left: 5px;
+    }
+
+    .sidebar ul li a i {
+        font-size: 16px;
+        margin-right: 12px;
+    }
+}
