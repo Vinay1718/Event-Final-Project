@@ -2,6 +2,7 @@ import React from 'react'
 import "./Tickets.css"
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Tickets() {
 
   const Naviagte = useNavigate();
@@ -34,7 +35,7 @@ export default function Tickets() {
       {
         tickets.map((ticket)=>[
           <div key={ticket.id} className='event'>
-            <img src={ticket.icon} alt="error"></img>
+            <i className={ticket.icon}></i>
             <h2 onClick={()=> Naviagte(ticket.address)}>{ticket.name}</h2>
             <p>{ticket.description}</p>
             
@@ -44,3 +45,4 @@ export default function Tickets() {
       </div>
   )
 }
+

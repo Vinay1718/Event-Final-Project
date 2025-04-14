@@ -103,3 +103,105 @@ th {
         padding: 10px;
     }
 }
+
+.order-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", sans-serif;
+    border-top: 5px solid crimson;
+    border-radius: 8px;
+  }
+  
+  .order-container h2 {
+    color: crimson;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+  }
+  
+  .order-details {
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-left: 4px solid crimson;
+    background-color: #fafafa;
+  }
+  
+  .order-details h3 {
+    color: crimson;
+    margin-bottom: 15px;
+  }
+  
+  .order-details p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .order-table th,
+  .order-table td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  
+  .order-table th {
+    background-color: crimson;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .order-table td {
+    background-color: #fff;
+    font-size: 15px;
+  }
+  
+  .print-btn {
+    background-color: crimson;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+  }
+  
+  .print-btn:hover {
+    background-color: darkred;
+  }
+  
+  .empty-cart {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 30px;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 600px) {
+    .order-container {
+      padding: 20px;
+    }
+  
+    .order-table th,
+    .order-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .print-btn {
+      width: 100%;
+    }
+  }
+  

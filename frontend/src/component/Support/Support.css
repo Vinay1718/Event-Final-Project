@@ -50,8 +50,9 @@
   font-size: 1rem;
 }
 
+
 .input-group textarea {
-  resize: vertical;
+  resize: none;
 }
 
 .btn {

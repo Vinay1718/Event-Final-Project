@@ -1,6 +1,7 @@
 import React from 'react'
 import './Sidebar.css'
 import { Link } from 'react-router-dom'
+import ThemeToggle from '../Toggle/Toggle'
 
 export default function Sidebar() {
     return (
@@ -58,7 +59,12 @@ export default function Sidebar() {
                 Support
                 </Link>
                 </li>
+
             </ul>
+            <ul className='theme-toggle'>
+                <ThemeToggle />
+            </ul>
+            
         </div>
     )
 }

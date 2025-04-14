@@ -61,26 +61,26 @@ function App() {
               <Route path='/payments' element={<Payments />} />
               <Route path='/support' element={<Support />} />
               <Route path='/tickets' element={<Tickets />} />
-              <Route path='/tickets/conference' element={<Conference />} />
-              <Route path='/tickets/fundraiser' element={<Fundraiser />} />
-              <Route path='/tickets/workshop' element={<Workshop />} />
-              <Route path='/tickets/webinar' element={<Webinar />} />
-              <Route path='/tickets/trade-show' element={<Trade />} />
-              <Route path='/tickets/sport-events' element={<Sport />} />
-              <Route path='/tickets/seminar' element={<Seminar />} />
-              <Route path='/tickets/product-launch' element={<Product />} />
-              <Route path='/tickets/panel-discussion' element={<Panel />} />
-              <Route path='/tickets/networking-event' element={<Networking />} />
-              <Route path='/tickets/hackathon' element={<Hackathon />} />
-              <Route path='/tickets/gaming-tournament' element={<Gaming />} />
-              <Route path='/tickets/festival' element={<Festival />} />
-              <Route path='/tickets/exhibition' element={<Exhibition />} />
-              <Route path='/tickets/concert' element={<Concert/>} />
-              <Route path='/tickets/comedy-show' element={<Comedy/>} />
-              <Route path='/tickets/charity-gala' element={<Charity/>} />
-              <Route path='/tickets/book-signing' element={<Booksigning/>} />
-              <Route path='/tickets/film-screening' element={<Film/>} />
-              <Route path='/tickets/career-fair' element={<Career/>} />
+              <Route path='/tickets/conference' element={<Conference cart={cart} setCart={setCart} />} />
+              <Route path='/tickets/fundraiser' element={<Fundraiser cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/workshop' element={<Workshop cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/webinar' element={<Webinar cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/trade-show' element={<Trade cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/sport-events' element={<Sport cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/seminar' element={<Seminar cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/product-launch' element={<Product cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/panel-discussion' element={<Panel cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/networking-event' element={<Networking cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/hackathon' element={<Hackathon cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/gaming-tournament' element={<Gaming cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/festival' element={<Festival cart={cart} setCart={setCart} />} />
+              <Route path='/tickets/exhibition' element={<Exhibition cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/concert' element={<Concert cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/comedy-show' element={<Comedy cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/charity-gala' element={<Charity cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/book-signing' element={<Booksigning cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/film-screening' element={<Film cart={cart} setCart={setCart}/>} />
+              <Route path='/tickets/career-fair' element={<Career cart={cart} setCart={setCart}/>} />
             </Routes>
           </div>
         </div>

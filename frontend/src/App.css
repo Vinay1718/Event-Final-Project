@@ -22,7 +22,7 @@
     }
 
     .sidebar:hover ~ .content-container {
-        margin-left: 220px;
+        margin-left: 185px;
     }
 }
 
@@ -33,6 +33,6 @@
     }
 
     .sidebar:hover ~ .content-container {
-        margin-left: 180px;
+        margin-left: 80px;
     }
 }

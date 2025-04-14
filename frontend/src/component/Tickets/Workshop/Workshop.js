@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Workshop.css'
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 import e37 from '../images/e37.webp';
 import e38 from '../images/e38.webp';
@@ -14,9 +16,8 @@ import e46 from '../images/e46.webp';
 import e47 from '../images/e47.webp';
 import e48 from '../images/e48.webp';
 
-
-
-export default function Workshop() {
+export default function Workshop({ cart, setCart }) {
+  const [searchQuery, setSearchQuery] = useState('');
 
   const workshops = [
     { id: 1, name: "Leadership & Management Workshop", description: "Develop leadership skills, team management, and strategic decision-making abilities.", amount: 1500, location: "New York, USA", time: "10:00 AM - 3:00 PM", date: "2025-06-15", image: e37 },
@@ -31,24 +32,76 @@ export default function Workshop() {
     { id: 10, name: "Artificial Intelligence & Machine Learning Workshop", description: "Understand AI and ML fundamentals with hands-on projects and real-world applications.", amount: 2200, location: "Singapore", time: "9:00 AM - 3:00 PM", date: "2025-10-05", image: e46 },
     { id: 11, name: "Content Writing & Blogging Workshop", description: "Enhance writing skills, storytelling techniques, and blogging strategies for digital success.", amount: 1300, location: "Los Angeles, USA", time: "10:00 AM - 3:00 PM", date: "2025-09-20", image: e47 },
     { id: 12, name: "Cybersecurity & Ethical Hacking Workshop", description: "Learn about cybersecurity threats, ethical hacking, and protecting online systems.", amount: 2100, location: "Tokyo, Japan", time: "9:30 AM - 2:30 PM", date: "2025-11-15", image: e48 }
-];
+  ];
 
 
+  const filteredWorkshops = workshops.filter(event =>
+    event.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    event.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    event.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const toastConfig = {
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+    style: {
+      background: "linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7))",
+      color: "#fff",
+      fontWeight: "bold",
+      borderRadius: "8px",
+      boxShadow: "4px 4px 12px rgba(0, 0, 0, 0.2)"
+    },
+    theme: "colored",
+  };
+
+  const addToCart = (workshop) => {
+    setCart((prevCart) => {
+      const isItemInCart = prevCart.some((item) => item.id === workshop.id);
+      toast.dismiss();
+      if (!isItemInCart) {
+        toast.success(`${workshop.name} added to cart!`, toastConfig);
+        return [...prevCart, workshop];
+      } else {
+        toast.info(`${workshop.name} is already in cart!`, toastConfig);
+        return prevCart;
+      }
+    });
+  };
 
   return (
-    <div className='ticket-container'>
-    {
-      workshops.map((workshop) => [
-        <div key={workshop.id} className='card'>
-          <img src={workshop.image} alt={workshop.name} />
-          <h2>{workshop.name}</h2>
-          <h3>{workshop.location}</h3>
-          <h3>₹{workshop.amount}</h3>
-          <button>View Details</button>
-          <button>Add to Cart</button>
+    <>
+      <ToastContainer />
+      <div>
+        <div className="search-bar-container">
+          <input
+            type="text"
+            placeholder="Search comedy events by name or location..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className='search-bar'
+          />
         </div>
-      ])
-    }
-  </div>
-  )
+
+        <div className='ticket-container'>
+          {
+            filteredWorkshops.map((workshop) => [
+              <div key={workshop.id} className='card'>
+                <img src={workshop.image} alt={workshop.name} />
+                <h2>{workshop.name}</h2>
+                <h3>{workshop.location}</h3>
+                <h3>₹{workshop.amount}</h3>
+                <button>View Details</button>
+                <button onClick={() => addToCart(workshop)}>Add to Cart</button>
+              </div>
+            ])
+          }
+        </div>
+      </div>
+    </>
+
+  );
 }
