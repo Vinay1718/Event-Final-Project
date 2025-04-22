@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Cart({ cart, setCart }) {
   const navigate = useNavigate();
 
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
