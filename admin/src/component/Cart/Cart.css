@@ -1,0 +1,220 @@
+.cart-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins', sans-serif;
+}
+
+.cart-container h2 {
+    text-align: center;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.cart-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 25px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-details {
+    flex: 1;
+    font-size: 18px;
+}
+
+.cart-details h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.quantity-controls button {
+    background: linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7));
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.quantity-controls button:hover {
+    background: rgba(240, 25, 25, 0.8);
+}
+
+.cart-total {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 25px;
+    color: #333;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.checkout-btn,
+.back-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.checkout-btn {
+    background: linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7));
+    color: white;
+    box-shadow: 3px 3px 12px rgba(255, 87, 34, 0.3);
+}
+
+.checkout-btn:hover {
+    background: rgba(240, 25, 25, 0.8);
+    transform: translateY(-2px);
+}
+
+.back-btn {
+    background: linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7));
+    color: white;
+    box-shadow: 3px 3px 12px rgba(50, 50, 50, 0.3);
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, rgba(240, 25, 25, 0.9), rgba(240, 25, 25, 0.7));
+    transform: translateY(-2px);
+}
+
+.remove-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #d9534f;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.remove-btn:hover {
+    transform: scale(1.2);
+    color: #c9302c;
+}
+
+
+@media (max-width: 1024px) {
+    .cart-container {
+        padding: 20px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cart-image {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 15px;
+    }
+
+    .cart-details {
+        font-size: 16px;
+    }
+
+    .cart-details h3 {
+        font-size: 20px;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .checkout-btn,
+    .back-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cart-container {
+        padding: 15px;
+    }
+
+    .cart-item {
+        padding: 15px;
+    }
+
+    .cart-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cart-details {
+        font-size: 14px;
+    }
+
+    .cart-details h3 {
+        font-size: 18px;
+    }
+
+    .quantity-controls {
+        gap: 10px;
+    }
+
+    .cart-total {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .checkout-btn,
+    .back-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+}

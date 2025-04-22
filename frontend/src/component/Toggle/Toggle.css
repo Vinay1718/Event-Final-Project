@@ -1,0 +1,40 @@
+.theme-toggle-container {
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.theme-toggle-btn {
+    padding: 10px 16px;
+    font-size: 16px;
+    background-color: #f01919;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #c31414;
+}
+
+body[data-theme="light"] {
+    background-color: white;
+    color: #f01919;
+}
+
+body[data-theme="dark"] {
+    background-color: #f01919;
+    color: white;
+}
+
+body[data-theme="light"] a {
+    color: #f01919;
+}
+
+body[data-theme="dark"] a {
+    color: white;
+}
+

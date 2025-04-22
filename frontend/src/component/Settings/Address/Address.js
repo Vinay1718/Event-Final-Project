@@ -35,6 +35,7 @@ export default function Address() {
       {formData && (
         <button className="continue-btn" onClick={()=> navigate('/payments')}>Continue</button>
       )}
+      <button className="continue-btn" onClick={()=> navigate('/settings/edit')}>Add/ edit new address</button>
     </div>
   );
 }

@@ -1,0 +1,38 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.content-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-x: hidden;
+  margin-left: 85px;
+  transition: margin-left 0.5s ease;
+}
+
+.sidebar:hover~.content-container {
+  margin-left: 260px;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    margin-left: 85px;
+    padding: 15px;
+  }
+
+  .sidebar:hover~.content-container {
+    margin-left: 185px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    margin-left: 70px;
+    padding: 10px;
+  }
+
+  .sidebar:hover~.content-container {
+    margin-left: 80px;
+  }
+}

@@ -56,6 +56,7 @@ import h30 from "../asset/h30.webp";
 
 export default function Home({ cart, setCart }) {
   const [selectedTicket, setSelectedTicket] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const tickets = [
     { id: 1, name: "Dancing Event", place: "Delhi", price: 500, image: h1, description: "A night of energetic dance performances featuring top artists and DJs." },
@@ -108,7 +109,15 @@ export default function Home({ cart, setCart }) {
     { id: 48, name: "Hot Air Balloon Ride", place: "Jaipur", price: 2800, image: h48, description: "Soar above Jaipur’s majestic forts and palaces in a magical hot air balloon ride, offering panoramic views of the Pink City." },
     { id: 49, name: "Ice Skating Show", place: "Shimla", price: 1300, image: h49, description: "Experience a dazzling ice-skating spectacle featuring world-class performers executing gravity-defying spins and artistic routines." },
     { id: 50, name: "Zumba Festival", place: "Pune", price: 450, image: h50, description: "Dance, sweat, and have fun at Pune’s biggest Zumba festival, where fitness meets rhythm in an electrifying atmosphere." }
-];
+  ];
+
+  const filteredTickets = tickets.filter(
+    (ticket) =>
+      ticket.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      ticket.place.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      ticket.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
 
   const toastConfig = {
     position: "top-right",
@@ -144,8 +153,18 @@ export default function Home({ cart, setCart }) {
   return (
     <>
       <ToastContainer />
+      <div className="search-bar-container">
+        <input
+          type="text"
+          placeholder="Search by event or city..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="search-bar"
+        />
+      </div>
+
       <div className="ticket-container">
-        {tickets.map((ticket) => (
+        {filteredTickets.map((ticket) => (
           <div key={ticket.id} className="card">
             <img src={ticket.image} alt={ticket.name} />
             <h2>{ticket.name}</h2>
