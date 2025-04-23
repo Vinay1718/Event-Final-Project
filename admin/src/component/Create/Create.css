@@ -1,0 +1,80 @@
+.create-event-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(217, 83, 79, 0.15);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.create-event-container h2 {
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.event-image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 3px solid #d9534f;
+}
+
+.event-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #d9534f;
+}
+
+.event-form input[type="text"],
+.event-form input[type="date"],
+.event-form textarea,
+.event-form input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d9534f;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 14px;
+    background: #fff;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+.event-form input:focus,
+.event-form textarea:focus {
+    outline: none;
+    border-color: #c9302c;
+}
+
+.event-form textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #c9302c;
+}
+
+@media (max-width: 768px) {
+
+    .event-form input,
+    .event-form textarea {
+        font-size: 14px;
+    }
+}

@@ -7,6 +7,11 @@ import Sidebar from './component/sidebar/Sidebar';
 import Dashboard from './component/Dashboard/Dashboard';
 import Cart from './component/Cart/Cart';
 import Tickets from './component/Tickets/Tickets';
+import Settings from './component/Settings/Settings';
+import Custome from './component/Custome/Custome';
+import Revenue from './component/Revenue/Revenue';
+import Create from './component/Create/Create';
+
 
 import Conference from './component/Tickets/Conference/Conference';
 import Fundraiser from './component/Tickets/Fundraiser/Fundraiser';
@@ -42,6 +47,10 @@ function App() {
               <Route path='/' element={<Dashboard cart={cart} setCart={setCart}/>} />
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
+              <Route path='/settings' element={<Settings />} />
+              <Route path='/custome' element={<Custome />} />
+              <Route path='/revenue' element={<Revenue />} />
+              <Route path='/create' element={<Create />} />
               <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
               <Route path='/tickets' element={<Tickets />} />
               <Route path='/tickets/conference' element={<Conference cart={cart} setCart={setCart} />} />

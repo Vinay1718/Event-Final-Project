@@ -17,21 +17,22 @@ import e131 from '../images/e131.webp';
 import e132 from '../images/e132.webp';
 
 export default function Hackathon({ cart, setCart }) {
+  const [selectedHackathon, setSelectedHackathon] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   const hackathons = [
-    { id: 1, name: "AI & Machine Learning Hackathon", description: "Develop AI-driven solutions and machine learning models in a competitive setting.", amount: 7000, location: "San Francisco, USA", time: "9:00 AM - 9:00 PM", date: "2025-06-30", image: e121 },
-    { id: 2, name: "Cybersecurity Hackathon", description: "Participants work on ethical hacking challenges and cybersecurity solutions.", amount: 6500, location: "New York, USA", time: "10:00 AM - 8:00 PM", date: "2025-07-20", image: e122 },
-    { id: 3, name: "FinTech Hackathon", description: "A coding event for building innovative financial technology applications.", amount: 7200, location: "London, UK", time: "8:00 AM - 10:00 PM", date: "2025-08-12", image: e123 },
-    { id: 4, name: "Blockchain & Web3 Hackathon", description: "Develop decentralized apps (DApps) and blockchain-based solutions.", amount: 8000, location: "Dubai, UAE", time: "9:30 AM - 11:00 PM", date: "2025-09-18", image: e124 },
-    { id: 5, name: "Healthcare Tech Hackathon", description: "A hackathon focused on technology solutions for the healthcare industry.", amount: 6800, location: "Berlin, Germany", time: "10:00 AM - 9:00 PM", date: "2025-10-10", image: e125 },
-    { id: 6, name: "EdTech Hackathon", description: "Develop innovative solutions to improve education using technology.", amount: 6200, location: "Toronto, Canada", time: "9:00 AM - 7:00 PM", date: "2025-11-05", image: e126 },
-    { id: 7, name: "Game Development Hackathon", description: "Create and develop new video games within a limited time frame.", amount: 7500, location: "Los Angeles, USA", time: "8:00 AM - 12:00 AM", date: "2025-12-15", image: e127 },
-    { id: 8, name: "Smart Cities & IoT Hackathon", description: "Work on IoT and smart city solutions for urban innovation.", amount: 7000, location: "Singapore", time: "9:30 AM - 10:00 PM", date: "2026-01-25", image: e128 },
-    { id: 9, name: "Sustainability & GreenTech Hackathon", description: "Develop eco-friendly technology solutions for sustainability challenges.", amount: 6900, location: "Amsterdam, Netherlands", time: "10:00 AM - 9:00 PM", date: "2026-02-18", image: e129 },
-    { id: 10, name: "E-commerce & Retail Tech Hackathon", description: "Build next-generation solutions for the e-commerce industry.", amount: 7100, location: "Hong Kong", time: "8:00 AM - 9:30 PM", date: "2026-03-12", image: e130 },
-    { id: 11, name: "Social Impact & Nonprofit Hackathon", description: "Create technology-driven solutions for social good and nonprofit initiatives.", amount: 6300, location: "Paris, France", time: "9:00 AM - 8:00 PM", date: "2026-04-10", image: e131 },
-    { id: 12, name: "Open Source Contribution Hackathon", description: "A collaborative coding event to contribute to open-source projects.", amount: 6700, location: "San Diego, USA", time: "10:00 AM - 9:00 PM", date: "2026-05-05", image: e132 }
+    { id: 1, name: "AI & Machine Learning Hackathon", description: "Develop AI-driven solutions and machine learning models in a competitive setting.", price: 7000, location: "San Francisco, USA", time: "9:00 AM - 9:00 PM", date: "2025-06-30", image: e121 },
+    { id: 2, name: "Cybersecurity Hackathon", description: "Participants work on ethical hacking challenges and cybersecurity solutions.", price: 6500, location: "New York, USA", time: "10:00 AM - 8:00 PM", date: "2025-07-20", image: e122 },
+    { id: 3, name: "FinTech Hackathon", description: "A coding event for building innovative financial technology applications.", price: 7200, location: "London, UK", time: "8:00 AM - 10:00 PM", date: "2025-08-12", image: e123 },
+    { id: 4, name: "Blockchain & Web3 Hackathon", description: "Develop decentralized apps (DApps) and blockchain-based solutions.", price: 8000, location: "Dubai, UAE", time: "9:30 AM - 11:00 PM", date: "2025-09-18", image: e124 },
+    { id: 5, name: "Healthcare Tech Hackathon", description: "A hackathon focused on technology solutions for the healthcare industry.", price: 6800, location: "Berlin, Germany", time: "10:00 AM - 9:00 PM", date: "2025-10-10", image: e125 },
+    { id: 6, name: "EdTech Hackathon", description: "Develop innovative solutions to improve education using technology.", price: 6200, location: "Toronto, Canada", time: "9:00 AM - 7:00 PM", date: "2025-11-05", image: e126 },
+    { id: 7, name: "Game Development Hackathon", description: "Create and develop new video games within a limited time frame.", price: 7500, location: "Los Angeles, USA", time: "8:00 AM - 12:00 AM", date: "2025-12-15", image: e127 },
+    { id: 8, name: "Smart Cities & IoT Hackathon", description: "Work on IoT and smart city solutions for urban innovation.", price: 7000, location: "Singapore", time: "9:30 AM - 10:00 PM", date: "2026-01-25", image: e128 },
+    { id: 9, name: "Sustainability & GreenTech Hackathon", description: "Develop eco-friendly technology solutions for sustainability challenges.", price: 6900, location: "Amsterdam, Netherlands", time: "10:00 AM - 9:00 PM", date: "2026-02-18", image: e129 },
+    { id: 10, name: "E-commerce & Retail Tech Hackathon", description: "Build next-generation solutions for the e-commerce industry.", price: 7100, location: "Hong Kong", time: "8:00 AM - 9:30 PM", date: "2026-03-12", image: e130 },
+    { id: 11, name: "Social Impact & Nonprofit Hackathon", description: "Create technology-driven solutions for social good and nonprofit initiatives.", price: 6300, location: "Paris, France", time: "9:00 AM - 8:00 PM", date: "2026-04-10", image: e131 },
+    { id: 12, name: "Open Source Contribution Hackathon", description: "A collaborative coding event to contribute to open-source projects.", price: 6700, location: "San Diego, USA", time: "10:00 AM - 9:00 PM", date: "2026-05-05", image: e132 }
   ];
 
   const filteredHackathons = hackathons.filter(event =>
@@ -94,13 +95,26 @@ export default function Hackathon({ cart, setCart }) {
                 <img src={hackathon.image} alt={hackathon.name} />
                 <h2>{hackathon.name}</h2>
                 <h3>{hackathon.location}</h3>
-                <h3>₹{hackathon.amount}</h3>
-                <button>View Details</button>
+                <h3>₹{hackathon.price}</h3>
+                <button onClick={() => setSelectedHackathon(hackathon)}>View Details</button>
                 <button onClick={() => addToCart(hackathon)}>Add to Cart</button>
               </div>
             ])
           }
         </div>
+
+        {selectedHackathon && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close-btn" onClick={() => setSelectedHackathon(null)}>&times;</span>
+              <img src={selectedHackathon.image} alt={selectedHackathon.name} />
+              <h2>{selectedHackathon.name}</h2>
+              <h3>{selectedHackathon.location}</h3>
+              <p>{selectedHackathon.description}</p>
+              <h3>₹{selectedHackathon.price}</h3>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

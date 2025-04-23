@@ -1,0 +1,157 @@
+.settings-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+h2 {
+    color: #d9534f;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.settings-subtext {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Admin Cards Grid */
+.settings-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Card Style */
+.settings-card {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 180px;
+}
+
+.settings-card i {
+    font-size: 30px;
+    color: #d9534f;
+    margin-bottom: 12px;
+}
+
+.settings-card h3 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.settings-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Hover effect */
+.settings-card:hover {
+    transform: translateY(-6px);
+    background: rgba(217, 83, 79, 0.1);
+}
+
+/* Disabled Card Style */
+.disabled-card {
+    background: #e0e0e0;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.disabled-card i {
+    color: #a1a1a1;
+}
+
+.disabled-card h3,
+.disabled-card p {
+    color: #777;
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+    .settings-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .settings-cards {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .settings-card {
+        padding: 16px;
+        min-height: 160px;
+    }
+
+    .settings-card i {
+        font-size: 26px;
+    }
+
+    .settings-card h3 {
+        font-size: 16px;
+    }
+
+    .settings-card p {
+        font-size: 13px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .settings-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .settings-subtext {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .settings-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .settings-card {
+        padding: 14px;
+        min-height: auto;
+    }
+
+    .settings-card i {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .settings-card h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .settings-card p {
+        font-size: 12px;
+    }
+}

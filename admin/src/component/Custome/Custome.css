@@ -1,0 +1,120 @@
+.event-update-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(217, 83, 79, 0.15);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+h2 {
+    color: #d9534f;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.event-preview {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.event-preview img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 3px solid #d9534f;
+}
+
+.event-info {
+    flex: 1;
+}
+
+.event-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #d9534f;
+}
+
+.event-info p {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #444;
+}
+
+.event-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #d9534f;
+}
+
+.event-form input[type="text"],
+.event-form input[type="date"],
+.event-form textarea,
+.event-form input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d9534f;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 14px;
+    background: #fff;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+.event-form input:focus,
+.event-form textarea:focus {
+    outline: none;
+    border-color: #c9302c;
+}
+
+.event-form input[type="file"] {
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.event-form textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #c9302c;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .event-preview {
+        flex-direction: column;
+    }
+
+    .event-info h3 {
+        font-size: 20px;
+    }
+
+    .event-preview img {
+        max-width: 100%;
+    }
+}

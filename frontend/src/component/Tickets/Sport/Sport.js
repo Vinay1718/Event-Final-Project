@@ -17,21 +17,22 @@ import e71 from '../images/e71.webp';
 import e72 from '../images/e72.webp';
 
 export default function Sport({ cart, setCart }) {
+  const [selectedSport, setSelectedSport] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   const sports = [
-    { id: 1, name: "Soccer World Cup", description: "The biggest international football tournament held every four years.", location: "Various countries", time: "Varies", date: "2026-06-10", image: e61 },
-    { id: 2, name: "NBA Finals", description: "The championship series of the National Basketball Association.", location: "USA", time: "8:00 PM - 11:00 PM", date: "2025-06-15", image: e62 },
-    { id: 3, name: "Wimbledon Tennis Championship", description: "The oldest and most prestigious tennis tournament, played on grass courts.", location: "London, UK", time: "10:00 AM - 8:00 PM", date: "2025-07-01", image: e63 },
-    { id: 4, name: "Olympic Games", description: "A global multi-sport event held every four years featuring various disciplines.", location: "Paris, France", time: "Varies", date: "2024-07-26", image: e64 },
-    { id: 5, name: "Tour de France", description: "A prestigious annual cycling race covering thousands of kilometers.", location: "France", time: "All day", date: "2025-07-10", image: e65 },
-    { id: 6, name: "Super Bowl", description: "The championship game of the National Football League (NFL) in the USA.", location: "USA", time: "6:30 PM - 10:00 PM", date: "2026-02-08", image: e66 },
-    { id: 7, name: "ICC Cricket World Cup", description: "The premier international championship of men's One Day International (ODI) cricket.", location: "India", time: "9:00 AM - 6:00 PM", date: "2027-10-15", image: e67 },
-    { id: 8, name: "Ironman Triathlon", description: "A long-distance triathlon race consisting of swimming, cycling, and running.", location: "Hawaii, USA", time: "6:00 AM - 10:00 PM", date: "2025-10-10", image: e68 },
-    { id: 9, name: "US Open Golf Championship", description: "A major golf tournament played annually in the United States.", location: "USA", time: "7:00 AM - 6:00 PM", date: "2025-06-20", image: e69 },
-    { id: 10, name: "MotoGP Grand Prix", description: "The premier class of motorcycle road racing events held on circuits worldwide.", location: "Various countries", time: "Varies", date: "2025-05-15", image: e70 },
-    { id: 11, name: "WWE WrestleMania", description: "A professional wrestling event produced annually by WWE.", location: "USA", time: "7:00 PM - 11:00 PM", date: "2026-04-05", image: e71 },
-    { id: 12, name: "X Games Extreme Sports", description: "An extreme sports event featuring skateboarding, BMX, and more.", location: "USA", time: "10:00 AM - 8:00 PM", date: "2025-08-20", image: e72 }
+    { id: 1, name: "Soccer World Cup", description: "The biggest international football tournament held every four years.", price:3000, location: "Various countries", time: "Varies", date: "2026-06-10", image: e61 },
+    { id: 2, name: "NBA Finals", description: "The championship series of the National Basketball Association.", price: 3500, location: "USA", time: "8:00 PM - 11:00 PM", date: "2025-06-15", image: e62 },
+    { id: 3, name: "Wimbledon Tennis Championship", description: "The oldest and most prestigious tennis tournament, played on grass courts.", price: 2800, location: "London, UK", time: "10:00 AM - 8:00 PM", date: "2025-07-01", image: e63 },
+    { id: 4, name: "Olympic Games", description: "A global multi-sport event held every four years featuring various disciplines.", price: 2500, location: "Paris, France", time: "Varies", date: "2024-07-26", image: e64 },
+    { id: 5, name: "Tour de France", description: "A prestigious annual cycling race covering thousands of kilometers.", price: 3200, location: "France", time: "All day", date: "2025-07-10", image: e65 },
+    { id: 6, name: "Super Bowl", description: "The championship game of the National Football League (NFL) in the USA.", location: "USA", price: 4000, time: "6:30 PM - 10:00 PM", date: "2026-02-08", image: e66 },
+    { id: 7, name: "ICC Cricket World Cup", description: "The premier international championship of men's One Day International (ODI) cricket.", price: 3700, location: "India", time: "9:00 AM - 6:00 PM", date: "2027-10-15", image: e67 },
+    { id: 8, name: "Ironman Triathlon", description: "A long-distance triathlon race consisting of swimming, cycling, and running.", price: 2900, location: "Hawaii, USA", time: "6:00 AM - 10:00 PM", date: "2025-10-10", image: e68 },
+    { id: 9, name: "US Open Golf Championship", description: "A major golf tournament played annually in the United States.", price: 4500, location: "USA", time: "7:00 AM - 6:00 PM", date: "2025-06-20", image: e69 },
+    { id: 10, name: "MotoGP Grand Prix", description: "The premier class of motorcycle road racing events held on circuits worldwide.", price: 2700, location: "Various countries", time: "Varies", date: "2025-05-15", image: e70 },
+    { id: 11, name: "WWE WrestleMania", description: "A professional wrestling event produced annually by WWE.", price: 3100, location: "USA", time: "7:00 PM - 11:00 PM", date: "2026-04-05", image: e71 },
+    { id: 12, name: "X Games Extreme Sports", description: "An extreme sports event featuring skateboarding, BMX, and more.", price: 2200, location: "USA", time: "10:00 AM - 8:00 PM", date: "2025-08-20", image: e72 }
 
   ];
 
@@ -94,13 +95,25 @@ export default function Sport({ cart, setCart }) {
                 <img src={sport.image} alt={sport.name} />
                 <h2>{sport.name}</h2>
                 <h3>{sport.location}</h3>
-                <h3>₹{sport.amount}</h3>
-                <button>View Details</button>
+                <h3>₹{sport.price}</h3>
+                <button onClick={() => setSelectedSport(sport)}>View Details</button>
                 <button onClick={() => addToCart(sport)}>Add to Cart</button>
               </div>
             ])
           }
         </div>
+        {selectedSport && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close-btn" onClick={() => setSelectedSport(null)}>&times;</span>
+              <img src={selectedSport.image} alt={selectedSport.name} />
+              <h2>{selectedSport.name}</h2>
+              <h3>{selectedSport.location}</h3>
+              <p>{selectedSport.description}</p>
+              <h3>₹{selectedSport.price}</h3>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

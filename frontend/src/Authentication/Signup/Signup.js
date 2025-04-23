@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './Signup.css';
 
+import Axios from 'axios';
+
 function Signup() {
-    const [name, setName] = useState('');
-    const [username, setUsername] = useState('');
+    const [firstName, setName] = useState('');
+    const [lastName, setUsername] = useState('');
     const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    const [phoneNo, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [termsAccepted, setTermsAccepted] = useState(false);
@@ -17,14 +19,9 @@ function Signup() {
             alert("Please accept the terms and conditions.");
             return;
         }
-
-        console.log('Signup details:', {
-            name,
-            username,
-            email,
-            phone,
-            password,
-        });
+        Axios.post('http://localhost:4200/user', {firstName, lastName, email, phoneNo, password })
+        .then((result)=> console.log(result))
+        .catch((err)=> console.log(err))
 
         alert('Signup successful!');
 
@@ -58,11 +55,12 @@ function Signup() {
                         <label>Full Name:</label>
                         <input
                             type="text"
-                            value={name}
+                            value={firstName}
                             onChange={(e) => setName(e.target.value)}
                             required
                             className="form-input"
                             placeholder="John Doe"
+                            name='firstname'
                         />
                     </div>
 
@@ -70,11 +68,12 @@ function Signup() {
                         <label>Username:</label>
                         <input
                             type="text"
-                            value={username}
+                            value={lastName}
                             onChange={(e) => setUsername(e.target.value)}
                             required
                             className="form-input"
                             placeholder="johndoe123"
+                            name='lastname'
                         />
                     </div>
 
@@ -87,6 +86,7 @@ function Signup() {
                             required
                             className="form-input"
                             placeholder="email@example.com"
+                            name='email'
                         />
                     </div>
 
@@ -94,11 +94,12 @@ function Signup() {
                         <label>Phone Number:</label>
                         <input
                             type="tel"
-                            value={phone}
+                            value={phoneNo}
                             onChange={(e) => setPhone(e.target.value)}
                             required
                             className="form-input"
                             placeholder="+91-9876543210"
+                            name='phoneNo'
                         />
                     </div>
 
@@ -111,6 +112,7 @@ function Signup() {
                             required
                             className="form-input"
                             placeholder="Enter password"
+                            name='password'
                         />
                     </div>
 

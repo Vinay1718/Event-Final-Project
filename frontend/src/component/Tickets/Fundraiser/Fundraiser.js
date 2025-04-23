@@ -17,22 +17,23 @@ import e23 from '../images/e23.webp';
 import e24 from '../images/e24.webp';
 
 export default function Fundraiser({ cart, setCart }) {
+  const [selectedFundraiser, setSelectedFundraiser] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
 
   const funds = [
-    { id: 1, name: "Charity Gala", description: "A formal fundraising event with dinner, entertainment, and auctions for a noble cause.", amount: 8000, location: "New York, USA", time: "7:00 PM - 11:00 PM", date: "2025-06-20", image: e13 },
-    { id: 2, name: "Walkathon", description: "A community-driven walking event to raise funds for health and social causes.", amount: 2000, location: "Los Angeles, USA", time: "8:00 AM - 12:00 PM", date: "2025-07-05", image: e14 },
-    { id: 3, name: "Benefit Concert", description: "A live music event featuring popular artists to raise funds for charity.", amount: 5000, location: "London, UK", time: "6:00 PM - 10:00 PM", date: "2025-08-15", image: e15 },
-    { id: 4, name: "Auction Fundraiser", description: "An auction of exclusive items and experiences to generate charitable contributions.", amount: 10000, location: "Dubai, UAE", time: "7:30 PM - 10:30 PM", date: "2025-09-12", image: e16 },
-    { id: 5, name: "Marathon Fundraiser", description: "A large-scale running event where participants raise money through sponsorships.", amount: 3000, location: "Sydney, Australia", time: "6:00 AM - 1:00 PM", date: "2025-10-10", image: e17 },
-    { id: 6, name: "Charity Dinner", description: "An exclusive dinner event with speeches and fundraising activities.", amount: 6000, location: "Toronto, Canada", time: "7:00 PM - 10:00 PM", date: "2025-11-08", image: e18 },
-    { id: 7, name: "Online Crowdfunding Campaign", description: "A virtual fundraising effort using online donation platforms.", amount: 1000, location: "Global (Online)", time: "24/7", date: "Ongoing", image: e19 },
-    { id: 8, name: "Talent Show Fundraiser", description: "A showcase of local talent with ticket sales contributing to a social cause.", amount: 2500, location: "Berlin, Germany", time: "5:00 PM - 9:00 PM", date: "2025-12-01", image: e20 },
-    { id: 9, name: "Charity Sports Tournament", description: "A competitive sports event where teams and spectators donate towards a cause.", amount: 4000, location: "Amsterdam, Netherlands", time: "10:00 AM - 5:00 PM", date: "2026-01-20", image: e21 },
-    { id: 10, name: "Book Fair Fundraiser", description: "A book sale event where proceeds go towards education and literacy programs.", amount: 1500, location: "Singapore", time: "9:00 AM - 6:00 PM", date: "2026-02-10", image: e22 },
-    { id: 11, name: "Comedy Night Fundraiser", description: "A stand-up comedy event where ticket proceeds support a charitable mission.", amount: 3500, location: "San Francisco, USA", time: "8:00 PM - 11:00 PM", date: "2026-03-05", image: e23 },
-    { id: 12, name: "Art Auction Fundraiser", description: "An auction of artworks donated by artists, with funds supporting community projects.", amount: 7000, location: "Paris, France", time: "6:30 PM - 9:30 PM", date: "2026-04-15", image: e24 }
+    { id: 1, name: "Charity Gala", description: "A formal fundraising event with dinner, entertainment, and auctions for a noble cause.", price: 8000, location: "New York, USA", time: "7:00 PM - 11:00 PM", date: "2025-06-20", image: e13 },
+    { id: 2, name: "Walkathon", description: "A community-driven walking event to raise funds for health and social causes.", price: 2000, location: "Los Angeles, USA", time: "8:00 AM - 12:00 PM", date: "2025-07-05", image: e14 },
+    { id: 3, name: "Benefit Concert", description: "A live music event featuring popular artists to raise funds for charity.", price: 5000, location: "London, UK", time: "6:00 PM - 10:00 PM", date: "2025-08-15", image: e15 },
+    { id: 4, name: "Auction Fundraiser", description: "An auction of exclusive items and experiences to generate charitable contributions.", price: 10000, location: "Dubai, UAE", time: "7:30 PM - 10:30 PM", date: "2025-09-12", image: e16 },
+    { id: 5, name: "Marathon Fundraiser", description: "A large-scale running event where participants raise money through sponsorships.", price: 3000, location: "Sydney, Australia", time: "6:00 AM - 1:00 PM", date: "2025-10-10", image: e17 },
+    { id: 6, name: "Charity Dinner", description: "An exclusive dinner event with speeches and fundraising activities.", price: 6000, location: "Toronto, Canada", time: "7:00 PM - 10:00 PM", date: "2025-11-08", image: e18 },
+    { id: 7, name: "Online Crowdfunding Campaign", description: "A virtual fundraising effort using online donation platforms.", price: 1000, location: "Global (Online)", time: "24/7", date: "Ongoing", image: e19 },
+    { id: 8, name: "Talent Show Fundraiser", description: "A showcase of local talent with ticket sales contributing to a social cause.", price: 2500, location: "Berlin, Germany", time: "5:00 PM - 9:00 PM", date: "2025-12-01", image: e20 },
+    { id: 9, name: "Charity Sports Tournament", description: "A competitive sports event where teams and spectators donate towards a cause.", price: 4000, location: "Amsterdam, Netherlands", time: "10:00 AM - 5:00 PM", date: "2026-01-20", image: e21 },
+    { id: 10, name: "Book Fair Fundraiser", description: "A book sale event where proceeds go towards education and literacy programs.", price: 1500, location: "Singapore", time: "9:00 AM - 6:00 PM", date: "2026-02-10", image: e22 },
+    { id: 11, name: "Comedy Night Fundraiser", description: "A stand-up comedy event where ticket proceeds support a charitable mission.", price: 3500, location: "San Francisco, USA", time: "8:00 PM - 11:00 PM", date: "2026-03-05", image: e23 },
+    { id: 12, name: "Art Auction Fundraiser", description: "An auction of artworks donated by artists, with funds supporting community projects.", price: 7000, location: "Paris, France", time: "6:30 PM - 9:30 PM", date: "2026-04-15", image: e24 }
   ];
 
 
@@ -95,13 +96,26 @@ export default function Fundraiser({ cart, setCart }) {
                 <img src={fund.image} alt={fund.name} />
                 <h2>{fund.name}</h2>
                 <h3>{fund.location}</h3>
-                <h3>₹{fund.amount}</h3>
-                <button>View Details</button>
+                <h3>₹{fund.price}</h3>
+                <button onClick={() => setSelectedFundraiser(fund)}>View Details</button>
                 <button onClick={() => addToCart(fund)}>Add to Cart</button>
               </div>
             ])
           }
         </div>
+
+        {selectedFundraiser && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close-btn" onClick={() => setSelectedFundraiser(null)}>&times;</span>
+              <img src={selectedFundraiser.image} alt={selectedFundraiser.name} />
+              <h2>{selectedFundraiser.name}</h2>
+              <h3>{selectedFundraiser.location}</h3>
+              <p>{selectedFundraiser.description}</p>
+              <h3>₹{selectedFundraiser.price}</h3>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

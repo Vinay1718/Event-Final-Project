@@ -40,7 +40,7 @@ export default function Sidebar() {
             <ul className='second'>
                 <li>
                 <Link to='/custome'>
-                <i class="fa-brands fa-paypal" style={{color: "#f01919;"}}></i>
+                <i class="fa-solid fa-pen-to-square" style={{color: "#f01919;"}}></i>
                 Custome
                 </Link>
                 </li>
@@ -54,7 +54,7 @@ export default function Sidebar() {
 
                 <li>
                 <Link to='/revenue'>
-                <i class="fa-solid fa-phone" style={{color: "#f01919;"}}></i>
+                <i class="fa-solid fa-money-bill-trend-up" style={{color: "#f01919;"}}></i>
                 Revenue
                 </Link>
                 </li>

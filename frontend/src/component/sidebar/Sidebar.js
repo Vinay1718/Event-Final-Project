@@ -59,6 +59,7 @@ export default function Sidebar() {
                 Support
                 </Link>
                 </li>
+                
 
             </ul>
             <ul className='theme-toggle'>

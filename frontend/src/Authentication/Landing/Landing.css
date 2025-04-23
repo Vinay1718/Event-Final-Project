@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e60023;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #e60023;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #e60023, #cc001f);
+    color: #fff;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    background-color: #fff;
+    color: #e60023;
+    border: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 9999px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero button:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.features h2 {
+    color: #e60023;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature-cards {
+    display: grid;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.feature {
+    background-color: #fff0f3;
+    border: 1px solid #ffccd5;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(230, 0, 35, 0.1);
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(230, 0, 35, 0.15);
+}
+
+.feature h3 {
+    color: #b3001b;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* About Section */
+.about {
+    background-color: #fafafa;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #e60023;
+    margin-bottom: 1.5rem;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0.5rem auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Testimonials */
+.testimonials {
+    background-color: #fff0f3;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #e60023;
+    margin-bottom: 2rem;
+}
+
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background-color: #fff;
+    border-left: 5px solid #e60023;
+    border-radius: 1rem;
+    padding: 1.5rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial h4 {
+    color: #b3001b;
+    font-weight: 600;
+}
+
+/* Call to Action */
+.cta {
+    background-color: #e60023;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta button {
+    background-color: #fff;
+    color: #e60023;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta button:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background-color: #cc001f;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p,
+    .about p,
+    .cta p {
+        font-size: 1rem;
+    }
+
+    .features h2,
+    .about h2,
+    .testimonials h2,
+    .cta h2 {
+        font-size: 2rem;
+    }
+}
