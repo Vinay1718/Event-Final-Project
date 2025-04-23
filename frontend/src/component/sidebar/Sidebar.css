@@ -23,11 +23,10 @@
     top: 0;
     transition: all 0.3s ease-in-out;
     overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 .sidebar:hover {
-    width: 260px; 
+    width: 260px;
 }
 
 .sidebar h1 {
@@ -96,7 +95,7 @@ h1 i {
 }
 
 .sidebar:hover ul li a span {
-    display: inline; 
+    display: inline;
 }
 
 .sidebar ul li a i {
@@ -110,7 +109,8 @@ h1 i {
     color: white;
 }
 
-.first, .second {
+.first,
+.second {
     padding-top: 10px;
 }
 
