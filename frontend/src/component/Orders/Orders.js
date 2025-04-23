@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Orders.css";
 import { useNavigate } from "react-router-dom";
+import emailjs from 'emailjs-com';
 
 export default function Orders() {
   const [cart, setCart] = useState([]);
   const [userDetails, setUserDetails] = useState({});
+  const [emailStatus, setEmailStatus] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,13 +22,57 @@ export default function Orders() {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
+  const getShippingCost = () => {
+    return 50;
+  };
+
+  const getTaxAmount = () => {
+    return (getTotalAmount() * 0.1);
+  };
+
   const handlePrint = () => {
+    sendEmail();
     window.print();
     setTimeout(() => {
       localStorage.removeItem("cart");
       setCart([]);
       navigate("/");
     }, 500);
+  };
+
+  const sendEmail = () => {
+    const orderItems = cart.map(item => ({
+      name: item.name,
+      image_url: item.image_url || '',
+      units: item.quantity,
+      price: item.price
+    }));
+
+    const shippingCost = getShippingCost();
+    const taxAmount = getTaxAmount();
+    const totalAmount = getTotalAmount();
+    
+    const templateParams = {
+      user_email: userDetails.email,
+      order_id: Math.floor(Math.random() * 10000),
+      orders: orderItems,
+      cost: {
+        shipping: shippingCost,
+        tax: taxAmount,
+        total: totalAmount + shippingCost + taxAmount
+      },
+      email: userDetails.email,
+    };
+
+    emailjs.send('service_e58baod', 'template_73jlyzx', templateParams, 't7CVEykoNbibTJ0KA')
+      .then(response => {
+        console.log('Email sent successfully:', response);
+        setEmailStatus('Email sent successfully!');
+      })
+      .catch(error => {
+        console.error('Error sending email:', error);
+        setEmailStatus('Failed to send email. Please try again later.');
+      });
   };
 
   return (
@@ -69,6 +115,8 @@ export default function Orders() {
       ) : (
         <p className="empty-cart">Your cart is empty. Please add items to place an order.</p>
       )}
+
+      {emailStatus && <div className="email-status">{emailStatus}</div>}
     </div>
   );
 }
