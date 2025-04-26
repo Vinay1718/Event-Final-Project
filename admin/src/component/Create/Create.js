@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Create.css';
 
-export default function CreateEvent() {
+export default function CreateEvent({ setTickets }) {
     const [event, setEvent] = useState({
         title: '',
         date: '',
@@ -33,23 +33,18 @@ export default function CreateEvent() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const formData = new FormData();
-        formData.append('title', event.title);
-        formData.append('date', event.date);
-        formData.append('location', event.location);
-        formData.append('description', event.description);
-        formData.append('image', event.imageFile);
+        const newTicket = {
+            id: new Date().getTime(),
+            name: event.title,
+            date: event.date,
+            place: event.location,
+            description: event.description,
+            price: 'TBD', 
+            image: event.imagePreview,
+        };
 
-        // Example API call
-        // fetch('/api/events/create', {
-        //   method: 'POST',
-        //   body: formData,
-        // });
+        setTickets((prevTickets) => [...prevTickets, newTicket]);
 
-        console.log('New Event Data:', event);
-        alert('Event created successfully!');
-
-        // Reset form
         setEvent({
             title: '',
             date: '',
@@ -58,6 +53,8 @@ export default function CreateEvent() {
             imageFile: null,
             imagePreview: null,
         });
+
+        alert('Event created successfully!');
     };
 
     return (

@@ -1,136 +1,170 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Custome.css';
 
-export default function EventUpdate() {
-    const defaultEvent = {
-        title: '',
-        date: '',
-        location: '',
-        description: '',
-        imageFile: null,
-        imagePreview: 'https://source.unsplash.com/800x400/?concert,event',
-    };
-
-    const [event, setEvent] = useState({
-        ...defaultEvent,
-        title: 'Summer Music Fest 2025',
-        date: '2025-06-15',
-        location: 'Mumbai, India',
-        description: 'An unforgettable night of music, lights, and dancing under the stars.',
+export default function UserProfile() {
+    const [user, setUser] = useState(() => {
+        const savedUser = localStorage.getItem('user');
+        return savedUser ? JSON.parse(savedUser) : {
+            name: 'User',
+            email: 'user@gmail.com',
+            phone: '123-456-7890',
+            address: '123 Fake Street, Springfield, USA',
+            gender: 'Male',
+            dob: '1990-01-01',
+            bio: 'Hello, I am a dummy user for the profile section.',
+            facebook: 'https://facebook.com/user',
+            instagram: 'https://instagram.com/user',
+            profileImage: 'https://www.w3schools.com/w3images/avatar2.png',
+        };
     });
+
+    const [isEditing, setIsEditing] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setEvent((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        const updatedUser = { ...user, [name]: value };
+        setUser(updatedUser);
+        localStorage.setItem('user', JSON.stringify(updatedUser));
     };
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setEvent((prev) => ({
-                ...prev,
-                imageFile: file,
-                imagePreview: URL.createObjectURL(file),
-            }));
+            const imageURL = URL.createObjectURL(file);
+            const updatedUser = { ...user, profileImage: imageURL };
+            setUser(updatedUser);
+            localStorage.setItem('user', JSON.stringify(updatedUser));
         }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        const formData = new FormData();
-        formData.append('title', event.title);
-        formData.append('date', event.date);
-        formData.append('location', event.location);
-        formData.append('description', event.description);
-        formData.append('image', event.imageFile);
-
-        // Example API call:
-        // fetch('/api/events/update', {
-        //   method: 'POST',
-        //   body: formData,
-        // });
-
-        console.log('Updated Event Data:', event);
-        alert('Event updated successfully!');
-
-        // Clear form
-        setEvent(defaultEvent);
+        setIsEditing(false);
     };
 
     return (
-        <div className="event-update-container">
-            <h2>Edit Event</h2>
-
-            <div className="event-preview">
-                <img src={event.imagePreview} alt="Event" />
-                <div className="event-info">
-                    <h3>{event.title || 'Event Title'}</h3>
-                    <p><strong>Date:</strong> {event.date || 'YYYY-MM-DD'}</p>
-                    <p><strong>Location:</strong> {event.location || 'Event Location'}</p>
-                    <p><strong>Description:</strong> {event.description || 'Event Description'}</p>
-                </div>
-            </div>
-
-            <form className="event-form" onSubmit={handleSubmit} encType="multipart/form-data">
-                <label>
-                    Title:
-                    <input
-                        type="text"
-                        name="title"
-                        value={event.title}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-
-                <label>
-                    Date:
-                    <input
-                        type="date"
-                        name="date"
-                        value={event.date}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-
-                <label>
-                    Location:
-                    <input
-                        type="text"
-                        name="location"
-                        value={event.location}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-
-                <label>
-                    Description:
-                    <textarea
-                        name="description"
-                        rows="4"
-                        value={event.description}
-                        onChange={handleChange}
-                        required
-                    ></textarea>
-                </label>
-
-                <label>
-                    Upload Image:
+        <div className="profile-container">
+            <h2>User Profile</h2>
+            <div className="profile-header">
+                <img src={user.profileImage} alt="Profile" className="profile-image" />
+                {isEditing ? (
                     <input
                         type="file"
                         accept="image/*"
                         onChange={handleImageChange}
-                        required
+                    />
+                ) : (
+                    <button className="edit-button" onClick={() => setIsEditing(true)}>
+                        Edit
+                    </button>
+                )}
+            </div>
+
+            <form onSubmit={handleSubmit} className="profile-form">
+                <label>
+                    Name:
+                    <input
+                        type="text"
+                        name="name"
+                        value={user.name}
+                        onChange={handleChange}
+                        disabled={!isEditing}
                     />
                 </label>
 
-                <button type="submit">Update Event</button>
+                <label>
+                    Email:
+                    <input
+                        type="email"
+                        name="email"
+                        value={user.email}
+                        onChange={handleChange}
+                        disabled={!isEditing}
+                    />
+                </label>
+
+                <label>
+                    Phone:
+                    <input
+                        type="text"
+                        name="phone"
+                        value={user.phone}
+                        onChange={handleChange}
+                        disabled={!isEditing}
+                    />
+                </label>
+
+                <label>
+                    Address:
+                    <input
+                        type="text"
+                        name="address"
+                        value={user.address}
+                        onChange={handleChange}
+                        disabled={!isEditing}
+                    />
+                </label>
+
+                <label>
+                    Gender:
+                    <select
+                        name="gender"
+                        value={user.gender}
+                        onChange={handleChange}
+                        disabled={!isEditing}
+                    >
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+
+                <label>
+                    Date of Birth:
+                    <input
+                        type="date"
+                        name="dob"
+                        value={user.dob}
+                        onChange={handleChange}
+                        disabled={!isEditing}
+                    />
+                </label>
+
+                <label>
+                    Bio:
+                    <textarea
+                        name="bio"
+                        value={user.bio}
+                        onChange={handleChange}
+                        disabled={!isEditing}
+                    />
+                </label>
+
+                <label>
+                    Facebook:
+                    <input
+                        type="text"
+                        name="facebook"
+                        value={user.facebook}
+                        onChange={handleChange}
+                        disabled={!isEditing}
+                    />
+                </label>
+
+                <label>
+                    Instagram:
+                    <input
+                        type="text"
+                        name="instagram"
+                        value={user.instagram}
+                        onChange={handleChange}
+                        disabled={!isEditing}
+                    />
+                </label>
+
+                {isEditing && (
+                    <button type="submit" className="save-button">Save Changes</button>
+                )}
             </form>
         </div>
     );
