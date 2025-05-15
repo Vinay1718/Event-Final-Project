@@ -46,6 +46,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route
@@ -55,8 +56,9 @@ function App() {
               <Sidebar />
               <div className="content-container">
                 <Routes>
-                  <Route path="/" element={<Home cart={cart} setCart={setCart} />} />
+                  <Route path="/home" element={<Home cart={cart} setCart={setCart} />} />
                   <Route path="/settings" element={<Settings />} />
+                  <Route path="/profile" element={<Profile />} />
                   <Route path="/settings/address" element={<Address />} />
                   <Route path="/settings/edit" element={<Edit />} />
                   <Route path="/settings/faq" element={<Faq />} />

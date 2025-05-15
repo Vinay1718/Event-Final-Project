@@ -64,7 +64,7 @@ export default function Orders() {
       email: userDetails.email,
     };
 
-    emailjs.send('service_e58baod', 'template_73jlyzx', templateParams, 't7CVEykoNbibTJ0KA')
+    emailjs.send('service_a85oxfp', 'template_bixosfg', templateParams, 'BhYpg_g0radNIeTwp')
       .then(response => {
         console.log('Email sent successfully:', response);
         setEmailStatus('Email sent successfully!');

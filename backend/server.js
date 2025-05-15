@@ -14,12 +14,12 @@ const MONGO_URI = process.env.MONGO_URL
 const PORT = process.env.PORT || 4200
 
 app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'http://localhost:3001'],
     methods: "POST", 
     credentials: true,
 }))
 
-mongoose.connect("mongodb://localhost:27017")
+mongoose.connect("mongodb+srv://vinayfagodia:vinayfagodia@event.t2k8cl6.mongodb.net/event")
 .then(()=> console.log("Database is connected."))
 .catch((err)=> console.log("There is some error!", err))
 
