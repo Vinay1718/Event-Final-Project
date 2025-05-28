@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
-
+import Axios from 'axios';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -10,17 +10,28 @@ const Login = () => {
 
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+    e.preventDefault();
 
-        if (!email || !password) {
-            alert('Please enter both email and password');
-            return;
-        }
+    if (!email || !password) {
+        alert('Please enter both email and password');
+        return;
+    }
 
-        console.log('Logged in with:', { email, password });
-        alert('Login successful!');
-        Navigate('/Home');
-    };
+    Axios.post('http://localhost:4200/login', { email, password })
+        .then((res) => {
+            if (res.data.success) {
+                alert('Login successful!');
+                Navigate('/Home');
+            } else {
+                alert(res.data.message || 'Invalid credentials');
+            }
+        })
+        .catch((err) => {
+            console.error('Login error:', err);
+            alert('An error occurred during login.');
+        });
+};
+
 
     return (
         <div className="login-page">

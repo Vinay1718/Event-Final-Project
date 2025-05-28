@@ -218,12 +218,16 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.cta button a{
+    color: #b3001b;
+    text-decoration: none;
+}
+
 .cta button:hover {
     background-color: #f5f5f5;
     transform: scale(1.05);
 }
 
-/* Footer */
 .footer {
     background-color: #cc001f;
     color: #fff;
@@ -232,7 +236,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
