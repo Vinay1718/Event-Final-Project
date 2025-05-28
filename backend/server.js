@@ -19,6 +19,8 @@ app.use(cors({
     credentials: true,
 }))
 
+
+
 mongoose.connect("mongodb+srv://vinayfagodia:vinayfagodia@event.t2k8cl6.mongodb.net/event")
 .then(()=> console.log("Database is connected."))
 .catch((err)=> console.log("There is some error!", err))
