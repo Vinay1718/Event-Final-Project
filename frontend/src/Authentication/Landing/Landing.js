@@ -1,7 +1,10 @@
 import React from "react";
 import "./Landing.css";
 
+import { useNavigate } from "react-router-dom";
+
 const Landing = () => {
+    const Navigate = useNavigate();
     return (
         <div>
             {/* Navbar */}
@@ -19,7 +22,7 @@ const Landing = () => {
             <section className="hero">
                 <h1>Welcome to Eventify</h1>
                 <p>Simplify your events with style and speed.</p>
-                <button>Get Started</button>
+                <button onClick={()=> Navigate('/signup')}>Get Started</button>
             </section>
 
             {/* Features Section */}

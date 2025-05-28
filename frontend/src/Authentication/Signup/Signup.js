@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Signup.css';
+import {useNavigate} from 'react-router-dom';
 
 import Axios from 'axios';
 
@@ -12,6 +13,7 @@ function Signup() {
     const [showPassword, setShowPassword] = useState(false);
     const [termsAccepted, setTermsAccepted] = useState(false);
 
+    const Navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -24,8 +26,7 @@ function Signup() {
         .catch((err)=> console.log(err))
 
         alert('Signup successful!');
-
-        // Reset form
+        Navigate('/login');
         setName('');
         setUsername('');
         setEmail('');
