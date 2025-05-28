@@ -36,7 +36,7 @@ export default function Orders() {
     setTimeout(() => {
       localStorage.removeItem("cart");
       setCart([]);
-      navigate("/");
+      navigate("/home");
     }, 500);
   };
 

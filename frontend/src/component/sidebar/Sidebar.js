@@ -11,7 +11,7 @@ export default function Sidebar() {
             </h1>
             <ul className='first'>
                 <li>
-                    <Link to='/'>
+                    <Link to='/home'>
                         <i class="fa-solid fa-house" style={{ color: "#f01919;" }}></i>
                         Home
                     </Link>
