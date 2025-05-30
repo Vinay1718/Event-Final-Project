@@ -13,8 +13,10 @@ const PORT = process.env.PORT || 4200;
 
 app.use(cors({
     origin: ['http://localhost:3000', 'http://localhost:3001', 'https://enjoyevent.netlify.app/'],
-    methods: "POST", 
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
+    optionsSuccessStatus: 200
 }));
 
 
