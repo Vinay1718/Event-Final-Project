@@ -8,7 +8,7 @@ const userModel = require('./Model/user');
 
 app.use(express.json());
 
-const MONGO_URI = process.env.MONGO_URL;
+const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 4200;
 
 app.use(cors({
@@ -19,7 +19,7 @@ app.use(cors({
 
 
 
-mongoose.connect("mongodb+srv://vinayfagodia:vinayfagodia@event.t2k8cl6.mongodb.net/event")
+mongoose.connect(MONGO_URL)
     .then(() => console.log("Database is connected."))
     .catch((err) => console.log("There is some error!", err));
 app.get('/', (req, res) => {

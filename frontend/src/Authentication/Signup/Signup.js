@@ -33,7 +33,7 @@ function Signup({ onSubmit }) {
             console.log(result);
             alert('Signup successful!');
             if (onSubmit) onSubmit();
-            navigate('/'); 
+            navigate('/login'); 
         })
         .catch((err) => {
             console.error(err);
@@ -154,8 +154,8 @@ function Signup({ onSubmit }) {
 
                     <button type="submit" className="signup-button">Sign Up</button>
 
-                    <p className="login-text">
-                        Already have an account? <a href="/login">Log In</a>
+                    <p className="login-text" onClick={()=> navigate('/login')}>
+                        Already have an account? Log In
                     </p>
                 </form>
             </div>

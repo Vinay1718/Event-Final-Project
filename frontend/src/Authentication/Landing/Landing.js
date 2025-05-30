@@ -82,7 +82,7 @@ const Landing = () => {
             <section className="cta" id="cta">
                 <h2>Ready to plan your next event?</h2>
                 <p>Join thousands of happy users and make your event shine!</p>
-                <button><a href="/signup">Sign up</a></button>
+                <button onClick={()=> Navigate('/signup')}>Sign up</button>
             </section>
 
             {/* Footer */}
