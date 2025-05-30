@@ -3,35 +3,34 @@ import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const Navigate = useNavigate();
-
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    if (!email || !password) {
-        alert('Please enter both email and password');
-        return;
-    }
+        if (!email || !password) {
+            alert('Please enter both email and password');
+            return;
+        }
 
-    Axios.post('http://localhost:4200/login', { email, password })
-        .then((res) => {
-            if (res.data.success) {
-                alert('Login successful!');
-                Navigate('/Home');
-            } else {
-                alert(res.data.message || 'Invalid credentials');
-            }
-        })
-        .catch((err) => {
-            console.error('Login error:', err);
-            alert('An error occurred during login.');
-        });
-};
-
+        Axios.post('http://localhost:4200/login', { email, password })
+            .then((res) => {
+                if (res.data.success) {
+                    alert('Login successful!');
+                    onLogin(); // ✅ this updates isAuthenticated in App.js
+                    navigate('/home'); // Make sure this route exists
+                } else {
+                    alert(res.data.message || 'Invalid credentials');
+                }
+            })
+            .catch((err) => {
+                console.error('Login error:', err);
+                alert('An error occurred during login.');
+            });
+    };
 
     return (
         <div className="login-page">

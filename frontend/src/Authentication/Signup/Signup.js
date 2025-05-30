@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './Signup.css';
-import {useNavigate} from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 
-function Signup() {
+function Signup({ onSubmit }) {
     const [firstName, setName] = useState('');
     const [lastName, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -13,7 +12,8 @@ function Signup() {
     const [showPassword, setShowPassword] = useState(false);
     const [termsAccepted, setTermsAccepted] = useState(false);
 
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -21,12 +21,26 @@ function Signup() {
             alert("Please accept the terms and conditions.");
             return;
         }
-        Axios.post('http://localhost:4200/user', {firstName, lastName, email, phoneNo, password })
-        .then((result)=> console.log(result))
-        .catch((err)=> console.log(err))
 
-        alert('Signup successful!');
-        Navigate('/login');
+        Axios.post('http://localhost:4200/user', {
+            firstName,
+            lastName,
+            email,
+            phoneNo,
+            password
+        })
+        .then((result) => {
+            console.log(result);
+            alert('Signup successful!');
+            if (onSubmit) onSubmit();
+            navigate('/'); 
+        })
+        .catch((err) => {
+            console.error(err);
+            alert("Signup failed. Please try again.");
+        });
+
+        // Reset form fields
         setName('');
         setUsername('');
         setEmail('');
@@ -37,7 +51,6 @@ function Signup() {
 
     return (
         <div className="signup-wrapper">
-
             <div className="left-section">
                 <h1>Welcome to Eventify!</h1>
                 <p>🎉 Join the ultimate platform for event lovers.</p>
@@ -46,9 +59,9 @@ function Signup() {
                 <p>🤝 Use Buddy Booking to grab tickets for your friends!</p>
                 <p>✨ Get personalized recommendations just for you.</p>
                 <p>🔔 Receive timely reminders so you never miss out.</p>
-
                 <img src="https://source.unsplash.com/300x200/?events,party" alt="Events" className="promo-image" />
             </div>
+
             <div className="signup-container">
                 <h2 className="signup-title">Create Your Account</h2>
                 <form onSubmit={handleSubmit} className="signup-form">
@@ -61,7 +74,7 @@ function Signup() {
                             required
                             className="form-input"
                             placeholder="John Doe"
-                            name='firstname'
+                            name="firstname"
                         />
                     </div>
 
@@ -74,7 +87,7 @@ function Signup() {
                             required
                             className="form-input"
                             placeholder="johndoe123"
-                            name='lastname'
+                            name="lastname"
                         />
                     </div>
 
@@ -87,7 +100,7 @@ function Signup() {
                             required
                             className="form-input"
                             placeholder="email@example.com"
-                            name='email'
+                            name="email"
                         />
                     </div>
 
@@ -100,7 +113,7 @@ function Signup() {
                             required
                             className="form-input"
                             placeholder="+91-9876543210"
-                            name='phoneNo'
+                            name="phoneNo"
                         />
                     </div>
 
@@ -113,7 +126,7 @@ function Signup() {
                             required
                             className="form-input"
                             placeholder="Enter password"
-                            name='password'
+                            name="password"
                         />
                     </div>
 
@@ -128,14 +141,14 @@ function Signup() {
                     </div>
 
                     <div className="form-group checkbox-group">
-                        <input className='jaga'
+                        <input
                             type="checkbox"
                             checked={termsAccepted}
                             onChange={() => setTermsAccepted(!termsAccepted)}
                             id="terms"
                         />
                         <label htmlFor="terms">
-                            I agree to the <a href="https://termly.io/resources/templates/terms-and-conditions-template/">terms and conditions</a>.
+                            I agree to the <a href="https://termly.io/resources/templates/terms-and-conditions-template/" target="_blank" rel="noreferrer">terms and conditions</a>.
                         </label>
                     </div>
 

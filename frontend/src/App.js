@@ -42,58 +42,60 @@ import Career from './component/Tickets/Career/Career';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLogin = () => setIsAuthenticated(true);
+  const handleSignup = () => setIsAuthenticated(true);
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route
-          path="*"
-          element={
-            <div className="app-container">
-              <Sidebar />
-              <div className="content-container">
-                <Routes>
-                  <Route path="/home" element={<Home cart={cart} setCart={setCart} />} />
-                  <Route path="/settings" element={<Settings />} />
-                  <Route path="/profile" element={<Profile />} />
-                  <Route path="/settings/address" element={<Address />} />
-                  <Route path="/settings/edit" element={<Edit />} />
-                  <Route path="/settings/faq" element={<Faq />} />
-                  <Route path="/settings/history" element={<History />} />
-                  <Route path="/orders" element={<Orders />} />
-                  <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
-                  <Route path="/payments" element={<Payments />} />
-                  <Route path="/support" element={<Support />} />
-                  <Route path="/tickets" element={<Tickets />} />
-                  <Route path="/tickets/conference" element={<Conference cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/fundraiser" element={<Fundraiser cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/workshop" element={<Workshop cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/webinar" element={<Webinar cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/trade-show" element={<Trade cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/sport-events" element={<Sport cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/seminar" element={<Seminar cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/product-launch" element={<Product cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/panel-discussion" element={<Panel cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/networking-event" element={<Networking cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/hackathon" element={<Hackathon cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/gaming-tournament" element={<Gaming cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/festival" element={<Festival cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/exhibition" element={<Exhibition cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/concert" element={<Concert cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/comedy-show" element={<Comedy cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/charity-gala" element={<Charity cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/book-signing" element={<Booksigning cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/film-screening" element={<Film cart={cart} setCart={setCart} />} />
-                  <Route path="/tickets/career-fair" element={<Career cart={cart} setCart={setCart} />} />
-                </Routes>
-              </div>
-            </div>
-          }
-        />
-      </Routes>
+      {!isAuthenticated ? (
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/signup" element={<Signup onSignup={handleSignup} />} />
+        </Routes>
+      ) : (
+        <div className="app-container">
+          <Sidebar />
+          <div className="content-container">
+            <Routes>
+              <Route path="/home" element={<Home cart={cart} setCart={setCart} />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/settings/address" element={<Address />} />
+              <Route path="/settings/edit" element={<Edit />} />
+              <Route path="/settings/faq" element={<Faq />} />
+              <Route path="/settings/history" element={<History />} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+              <Route path="/payments" element={<Payments />} />
+              <Route path="/support" element={<Support />} />
+              <Route path="/tickets" element={<Tickets />} />
+              <Route path="/tickets/conference" element={<Conference cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/fundraiser" element={<Fundraiser cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/workshop" element={<Workshop cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/webinar" element={<Webinar cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/trade-show" element={<Trade cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/sport-events" element={<Sport cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/seminar" element={<Seminar cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/product-launch" element={<Product cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/panel-discussion" element={<Panel cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/networking-event" element={<Networking cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/hackathon" element={<Hackathon cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/gaming-tournament" element={<Gaming cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/festival" element={<Festival cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/exhibition" element={<Exhibition cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/concert" element={<Concert cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/comedy-show" element={<Comedy cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/charity-gala" element={<Charity cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/book-signing" element={<Booksigning cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/film-screening" element={<Film cart={cart} setCart={setCart} />} />
+              <Route path="/tickets/career-fair" element={<Career cart={cart} setCart={setCart} />} />
+            </Routes>
+          </div>
+        </div>
+      )}
     </BrowserRouter>
   );
 }
