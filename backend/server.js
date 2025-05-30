@@ -12,7 +12,7 @@ const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 4200;
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://enjoyevent.netlify.app/'],
     methods: "POST", 
     credentials: true,
 }));

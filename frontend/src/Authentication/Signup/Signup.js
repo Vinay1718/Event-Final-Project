@@ -22,7 +22,7 @@ function Signup({ onSubmit }) {
             return;
         }
 
-        Axios.post('http://localhost:4200/user', {
+        Axios.post('https://event-final-project.onrender.com/user', {
             firstName,
             lastName,
             email,
