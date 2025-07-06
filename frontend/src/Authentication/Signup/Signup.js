@@ -60,7 +60,7 @@ function Signup() {
                             onChange={(e) => setName(e.target.value)}
                             required
                             className="form-input"
-                            placeholder="John Doe"
+                            placeholder="Raju"
                             name='firstname'
                         />
                     </div>
@@ -73,7 +73,7 @@ function Signup() {
                             onChange={(e) => setUsername(e.target.value)}
                             required
                             className="form-input"
-                            placeholder="johndoe123"
+                            placeholder="raju123"
                             name='lastname'
                         />
                     </div>
